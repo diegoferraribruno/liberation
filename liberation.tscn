@@ -1,0 +1,352 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://games/liberation/liberation.gd" type="Script" id=1]
+[ext_resource path="res://img/64/2614.png" type="Texture" id=2]
+[ext_resource path="res://games/liberation/Player.gd" type="Script" id=3]
+[ext_resource path="res://img/64/27a1.png" type="Texture" id=4]
+[ext_resource path="res://img/64/2198.png" type="Texture" id=5]
+[ext_resource path="res://img/64/2199.png" type="Texture" id=6]
+[ext_resource path="res://img/64/2196.png" type="Texture" id=7]
+[ext_resource path="res://img/64/2197.png" type="Texture" id=8]
+[ext_resource path="res://img/64/1f638.png" type="Texture" id=9]
+[ext_resource path="res://img/64/1f639.png" type="Texture" id=10]
+[ext_resource path="res://img/64/1f911.png" type="Texture" id=11]
+[ext_resource path="res://img/64/2639.png" type="Texture" id=12]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.0654912, 0.214106, 0.355164, 0.498741, 0.654912, 0.821159, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0.615686, 0, 1, 0.917647, 1, 0, 1, 0, 0.901961, 0.243137, 1, 0, 1, 0.831373, 1, 0.105882, 0.239216, 1, 1, 0.576172, 0, 1, 1, 0.904489, 0.774648, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = SubResource( 2 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 1, 0.478431, 0.796078, 1 )
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color( 0.85098, 0.85098, 0.85098, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0.980392, 0.772549, 1 )
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color( 0.85098, 0.85098, 0.85098, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://fonts/ComicNeue_Bold.otf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 29
+outline_size = 3
+outline_color = Color( 1, 1, 1, 0.768627 )
+use_filter = true
+font_data = SubResource( 7 )
+
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 12.1612
+height = 408.44
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 11.0362
+height = 10.2387
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 32.0
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 128
+corner_radius_top_right = 128
+corner_radius_bottom_right = 128
+corner_radius_bottom_left = 128
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 72.0
+
+[node name="Games" type="Node"]
+
+[node name="Liberation" type="Node2D" parent="."]
+position = Vector2( 0, -8 )
+
+[node name="Panel" type="Panel" parent="Liberation"]
+margin_left = -0.349609
+margin_top = 5483.66
+margin_right = 5473.65
+margin_bottom = 6503.66
+rect_rotation = -90.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel3" type="Panel" parent="Liberation"]
+margin_left = 503.968
+margin_top = 22.6878
+margin_right = 945.968
+margin_bottom = 342.688
+custom_styles/panel = SubResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel4" type="Panel" parent="Liberation"]
+margin_left = 30.0
+margin_top = 225.0
+margin_right = 480.0
+margin_bottom = 525.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Frame" type="StaticBody2D" parent="Liberation"]
+position = Vector2( 249.733, 247.355 )
+
+[node name="Panel2" type="Panel" parent="Liberation/Frame"]
+margin_left = -217.0
+margin_top = -222.0
+margin_right = 225.0
+margin_bottom = -31.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel3" type="Panel" parent="Liberation/Frame"]
+margin_left = -217.0
+margin_top = -177.0
+margin_right = 225.0
+margin_bottom = -42.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1f638" type="Sprite" parent="Liberation/Frame"]
+position = Vector2( -155.382, -117.256 )
+texture = ExtResource( 9 )
+
+[node name="1f639" type="Sprite" parent="Liberation/Frame"]
+position = Vector2( -76.0121, -115.668 )
+texture = ExtResource( 10 )
+
+[node name="1f911" type="Sprite" parent="Liberation/Frame"]
+position = Vector2( 11.2949, -115.668 )
+texture = ExtResource( 11 )
+
+[node name="2639" type="Sprite" parent="Liberation/Frame"]
+position = Vector2( 95.4272, -117.256 )
+texture = ExtResource( 12 )
+
+[node name="Name2" type="RichTextLabel" parent="Liberation/Frame"]
+margin_left = -196.587
+margin_top = -204.35
+margin_right = 201.413
+margin_bottom = -168.35
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[rainbow]Social Masks[/rainbow]"
+text = "Social Masks"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Liberation/Frame"]
+position = Vector2( 2.37842, -171.341 )
+rotation = 1.5708
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/Frame"]
+position = Vector2( 3.96582, -59.052 )
+rotation = 1.5708
+shape = SubResource( 10 )
+
+[node name="YSort" type="YSort" parent="Liberation"]
+script = ExtResource( 1 )
+
+[node name="Player" type="KinematicBody2D" parent="Liberation/YSort"]
+position = Vector2( 728.694, 254.701 )
+input_pickable = true
+collision/safe_margin = 10.601
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Visual" type="Node2D" parent="Liberation/YSort/Player"]
+
+[node name="2614" type="Sprite" parent="Liberation/YSort/Player/Visual"]
+visible = false
+position = Vector2( -12.6093, -66.4819 )
+texture = ExtResource( 2 )
+
+[node name="Body" type="Node2D" parent="Liberation/YSort/Player/Visual"]
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Liberation/YSort/Player/Visual/Body"]
+margin_left = -24.6983
+margin_top = -59.6129
+margin_right = 47.3017
+margin_bottom = 12.3871
+bbcode_enabled = true
+bbcode_text = "[url=user_id][img]res://img/64/1f483-1f3fb.png[/img][url]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Head" type="Node2D" parent="Liberation/YSort/Player/Visual"]
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Liberation/YSort/Player/Visual/Head"]
+margin_left = -32.1867
+margin_top = -85.4489
+margin_right = 39.8133
+margin_bottom = -13.4489
+bbcode_enabled = true
+bbcode_text = "[url=user_id][img]res://img/64/1f98c.png[/img][url]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Liberation/YSort/Player/Visual"]
+visible = false
+margin_left = 65.5317
+margin_top = 233.859
+margin_right = 137.532
+margin_bottom = 305.859
+bbcode_enabled = true
+bbcode_text = "[url=user_id][img]res://img/64/1f351.png[/img][url]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Liberation/YSort/Player"]
+position = Vector2( -0.8909, -9.8909 )
+rotation = 1.5708
+shape = SubResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="Liberation/YSort/Player"]
+position = Vector2( 0, -53.4539 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/YSort/Player/Area2D"]
+shape = SubResource( 6 )
+
+[node name="Name" type="RichTextLabel" parent="Liberation/YSort/Player"]
+visible = false
+margin_left = -79.0
+margin_top = -118.0
+margin_right = 75.0
+margin_bottom = -82.0
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "[center][rainbow]Diego[/rainbow][/center]"
+text = "Diego"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sun" type="Node2D" parent="Liberation"]
+position = Vector2( 388.568, 1485.13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Panel2" type="Panel" parent="Liberation/Sun"]
+margin_right = 256.0
+margin_bottom = 256.0
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ToruchControler" type="Node2D" parent="CanvasLayer"]
+modulate = Color( 1, 0, 0, 0.12549 )
+position = Vector2( -44.4975, 11.0704 )
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CanvasLayer/ToruchControler"]
+position = Vector2( 213.885, 289.074 )
+shape = SubResource( 11 )
+passby_press = true
+action = "ui_right"
+visibility_mode = 1
+
+[node name="2197" type="Sprite" parent="CanvasLayer/ToruchControler/TouchScreenButton"]
+position = Vector2( 57.7678, 12.791 )
+texture = ExtResource( 8 )
+
+[node name="2198" type="Sprite" parent="CanvasLayer/ToruchControler/TouchScreenButton"]
+position = Vector2( 61.7695, 132.659 )
+texture = ExtResource( 5 )
+
+[node name="27a1" type="Sprite" parent="CanvasLayer/ToruchControler/TouchScreenButton"]
+position = Vector2( 93.7359, 71.5097 )
+texture = ExtResource( 4 )
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="CanvasLayer/ToruchControler"]
+position = Vector2( 140.338, 216.096 )
+shape = SubResource( 11 )
+passby_press = true
+action = "ui_up"
+visibility_mode = 1
+
+[node name="27a4" type="Sprite" parent="CanvasLayer/ToruchControler/TouchScreenButton3"]
+position = Vector2( 71.4544, 56.2007 )
+rotation = 1.5708
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="CanvasLayer/ToruchControler"]
+position = Vector2( 144.091, 361.598 )
+shape = SubResource( 11 )
+passby_press = true
+action = "ui_down"
+visibility_mode = 1
+
+[node name="27a3" type="Sprite" parent="CanvasLayer/ToruchControler/TouchScreenButton4"]
+position = Vector2( 72.0018, 95.4186 )
+rotation = 1.5708
+texture = ExtResource( 4 )
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="CanvasLayer/ToruchControler"]
+position = Vector2( 68.8568, 293.594 )
+shape = SubResource( 11 )
+passby_press = true
+action = "ui_left"
+visibility_mode = 1
+
+[node name="2199" type="Sprite" parent="CanvasLayer/ToruchControler/TouchScreenButton2"]
+position = Vector2( 87.9602, 132.087 )
+texture = ExtResource( 6 )
+
+[node name="27a2" type="Sprite" parent="CanvasLayer/ToruchControler/TouchScreenButton2"]
+position = Vector2( 54.0706, 72.027 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="2196" type="Sprite" parent="CanvasLayer/ToruchControler/TouchScreenButton2"]
+position = Vector2( 85.3267, 12.1632 )
+texture = ExtResource( 7 )
+
+[connection signal="gui_input" from="Liberation/YSort/Player/Visual/Head/RichTextLabel3" to="Liberation/YSort/Player" method="_on_RichTextLabel3_gui_input"]
+[connection signal="meta_clicked" from="Liberation/YSort/Player/Visual/Head/RichTextLabel3" to="Liberation/YSort/Player" method="_on_RichTextLabel3_meta_clicked"]
