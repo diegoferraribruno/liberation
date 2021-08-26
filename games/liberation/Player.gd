@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
-var speed = 200
+var speed = 180
 var friction = 0.1
-var acceleration = 0.07
+var acceleration = 0.1
 var velocity = Vector2.ZERO
 var drag := false
 func _physics_process(delta):
@@ -33,7 +33,6 @@ func _physics_process(delta):
 
 func _on_RichTextLabel3_meta_clicked(meta):
 	print("got me")
-	pass # Replace with function body.
 
 func _on_RichTextLabel3_gui_input(event):
 	if Input.is_action_pressed("Click"):
