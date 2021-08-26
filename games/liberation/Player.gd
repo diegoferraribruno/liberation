@@ -1,28 +1,35 @@
 extends KinematicBody2D
-# Liberation Player
-var speed = 10000
-func _ready():
-	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var direction1 = Vector2(0,0)
-	var direction2 = Vector2(0,0)
+var speed = 200
+var friction = 0.1
+var acceleration = 0.07
+var velocity = Vector2.ZERO
+var drag := false
+func _physics_process(delta):
+	var input_velocity = Vector2.ZERO
+	# Check input for "desired" velocity
 	if Input.is_action_pressed("ui_right"):
-		direction1.x = 1
-		$Visual.scale.x = -1
+		input_velocity.x += 1
+		$"Visual".scale.x = -1
 	if Input.is_action_pressed("ui_left"):
-		direction2.x = -1
-		$Visual.scale.x = 1
-	if Input.is_action_pressed("ui_up"):
-		direction1.y = -1
+		input_velocity.x -= 1
+		$"Visual".scale.x = 1
 	if Input.is_action_pressed("ui_down"):
-		direction2.y = 1
-	var go = Vector2(direction1+direction2)*delta*speed
-	move(go)
-	
-func move(go):
-	move_and_slide(go)
+		input_velocity.y += 1
+	if Input.is_action_pressed("ui_up"):
+		input_velocity.y -= 1
+	input_velocity = input_velocity.normalized() * speed
+#		position =  lerp(position,get_global_mouse_position()-position-Vector2(36,36),delta)
+	if drag == true:
+		input_velocity = lerp( get_global_mouse_position() - position - Vector2(-32,-85),get_global_mouse_position(),-0.1).normalized() *speed
+		 
+	# If there's input, accelerate to the input velocity
+	if input_velocity.length() > 0:
+		velocity = velocity.linear_interpolate(input_velocity, acceleration)
+	else:
+		  # If there's no input, slow down to (0, 0)
+		velocity = velocity.linear_interpolate(Vector2.ZERO, friction)
+	velocity = move_and_slide(velocity)
 
 func _on_RichTextLabel3_meta_clicked(meta):
 	print("got me")
@@ -30,7 +37,9 @@ func _on_RichTextLabel3_meta_clicked(meta):
 
 func _on_RichTextLabel3_gui_input(event):
 	if Input.is_action_pressed("Click"):
-		position =  get_global_mouse_position() + Vector2(0,40)
+		drag = true
+#		move_and_slide(position)
 	else:
+		drag = false
 		pass
 	pass # Replace with function body.
