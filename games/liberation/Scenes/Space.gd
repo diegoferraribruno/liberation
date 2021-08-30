@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-
+var url = "https://diegoferraribruno.itch.io/gato-mia-2"
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -19,3 +19,9 @@ func _ready():
 func _on_Space_meta_clicked(meta):
 	if str(meta).begins_with("http"):
 		OS.shell_open(str(meta))
+
+
+func _on_Area2D_body_entered(body):
+	OS.shell_open(url)
+	print(body)
+	pass # Replace with function body.
