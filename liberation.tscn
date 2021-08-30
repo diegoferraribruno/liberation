@@ -1,7 +1,8 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://games/liberation/liberation.gd" type="Script" id=1]
 [ext_resource path="res://games/liberation/LiberationPlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://img/64/1f3aa.png" type="Texture" id=3]
 [ext_resource path="res://img/64/27a1.png" type="Texture" id=4]
 [ext_resource path="res://img/64/2198.png" type="Texture" id=5]
 [ext_resource path="res://img/64/2199.png" type="Texture" id=6]
@@ -11,7 +12,7 @@
 [ext_resource path="res://img/64/1f639.png" type="Texture" id=10]
 [ext_resource path="res://img/64/1f911.png" type="Texture" id=11]
 [ext_resource path="res://img/64/1f4fb.png" type="Texture" id=12]
-[ext_resource path="res://games/liberation/Scenes/Camera2D.gd" type="Script" id=13]
+[ext_resource path="res://games/liberation/Scenes/camera.tscn" type="PackedScene" id=13]
 [ext_resource path="res://OS/Clock.gd" type="Script" id=14]
 [ext_resource path="res://OS/Panel.gd" type="Script" id=15]
 [ext_resource path="res://OS/OS.gd" type="Script" id=16]
@@ -19,6 +20,15 @@
 [ext_resource path="res://img/64/1f334.png" type="Texture" id=18]
 [ext_resource path="res://img/64/1f333.png" type="Texture" id=19]
 [ext_resource path="res://img/64/1f68b.png" type="Texture" id=20]
+[ext_resource path="res://img/64/2615.png" type="Texture" id=21]
+[ext_resource path="res://img/64/1f3da.png" type="Texture" id=22]
+[ext_resource path="res://img/64/1f3e9.png" type="Texture" id=23]
+[ext_resource path="res://img/64/1f3f3-1f308.png" type="Texture" id=24]
+[ext_resource path="res://img/64/1f6a2.png" type="Texture" id=25]
+[ext_resource path="res://img/64/1f45b.png" type="Texture" id=26]
+[ext_resource path="res://img/64/1f45c.png" type="Texture" id=27]
+[ext_resource path="res://img/64/1f45d.png" type="Texture" id=28]
+[ext_resource path="res://games/liberation/Scenes/Space.gd" type="Script" id=29]
 
 [sub_resource type="StyleBoxEmpty" id=16]
 
@@ -111,6 +121,19 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="DynamicFontData" id=18]
+font_path = "res://fonts/ComicNeue_Bold.otf"
+
+[sub_resource type="DynamicFont" id=19]
+size = 29
+outline_size = 3
+outline_color = Color( 1, 1, 1, 0.768627 )
+use_filter = true
+font_data = SubResource( 18 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 335.063, 50.8545 )
+
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.843137, 0.905882, 0.937255, 0.619608 )
 border_width_left = 12
@@ -126,15 +149,21 @@ corner_radius_bottom_left = 8
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 60.7738, 2518.66 )
 
-[sub_resource type="DynamicFontData" id=18]
-font_path = "res://fonts/ComicNeue_Bold.otf"
-
-[sub_resource type="DynamicFont" id=19]
-size = 29
-outline_size = 3
-outline_color = Color( 1, 1, 1, 0.768627 )
-use_filter = true
-font_data = SubResource( 18 )
+[sub_resource type="StyleBoxFlat" id=23]
+content_margin_left = 24.0
+content_margin_right = 24.0
+content_margin_top = 24.0
+content_margin_bottom = 12.0
+bg_color = Color( 0, 0.501961, 1, 0.611765 )
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color( 0.85098, 0.85098, 0.85098, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="Games" type="Node"]
 
@@ -145,6 +174,7 @@ script = ExtResource( 16 )
 margin_top = 49.0
 margin_right = 374.0
 margin_bottom = 761.0
+mouse_filter = 2
 custom_styles/panel = SubResource( 16 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -154,6 +184,7 @@ __meta__ = {
 margin_right = 376.0
 margin_bottom = 44.0
 rect_clip_content = true
+mouse_filter = 2
 custom_styles/panel = SubResource( 14 )
 script = ExtResource( 15 )
 __meta__ = {
@@ -221,11 +252,13 @@ __meta__ = {
 }
 
 [node name="messages" type="VBoxContainer" parent="OS/Panel"]
+visible = false
 margin_left = 12.0
 margin_top = 90.0
 margin_right = 363.0
 margin_bottom = 309.0
 rect_clip_content = true
+mouse_filter = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -381,14 +414,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Camera2D" parent="." instance=ExtResource( 13 )]
+position = Vector2( 0, -8 )
+
 [node name="Liberation" type="Node2D" parent="."]
 position = Vector2( 0, -8 )
 
 [node name="sky" type="Panel" parent="Liberation"]
-margin_left = -2251.0
-margin_top = 60.0
-margin_right = -1748.0
-margin_bottom = 4925.0
+margin_left = -2331.73
+margin_top = 100.363
+margin_right = -1828.73
+margin_bottom = 4965.36
 rect_rotation = -90.0
 custom_styles/panel = SubResource( 22 )
 __meta__ = {
@@ -396,7 +432,7 @@ __meta__ = {
 }
 
 [node name="Sun" type="Node2D" parent="Liberation"]
-position = Vector2( 171.865, -7.7666 )
+position = Vector2( 174.534, 141.735 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -411,11 +447,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="sky2" type="Panel" parent="Liberation"]
+margin_left = -2321.0
+margin_top = 44.0
+margin_right = -2217.0
+margin_bottom = 4909.0
+rect_rotation = -90.0
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Background" type="Panel" parent="Liberation"]
-margin_left = -2251.0
-margin_top = 3007.17
-margin_right = 710.0
-margin_bottom = 7872.17
+margin_left = -2347.0
+margin_top = 3256.0
+margin_right = 870.0
+margin_bottom = 8121.0
 rect_rotation = -90.0
 custom_styles/panel = SubResource( 3 )
 __meta__ = {
@@ -425,11 +472,35 @@ __meta__ = {
 [node name="YSort" type="YSort" parent="Liberation"]
 script = ExtResource( 1 )
 
+[node name="Space" type="RichTextLabel" parent="Liberation/YSort"]
+margin_top = 57.0
+margin_right = 374.0
+margin_bottom = 769.0
+focus_mode = 2
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 19 )
+custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][url=https://diegoferraribruno.itch.io/gato-mia-2][img]res://img/64/1f639.png[/img] Play Gato Mia! Another game by Diego Ferrari Bruno[/url][/center]"
+text = " Play Gato Mia! Another game by Diego Ferrari Bruno"
+selection_enabled = true
+script = ExtResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="Liberation/YSort/Space"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/YSort/Space/Area2D"]
+position = Vector2( -8.90894, 12.4727 )
+shape = SubResource( 24 )
+
 [node name="Panel3" type="Panel" parent="Liberation/YSort"]
-margin_left = 793.249
-margin_top = 672.305
-margin_right = 1168.25
-margin_bottom = 884.305
+margin_left = 387.737
+margin_top = 1345.68
+margin_right = 762.737
+margin_bottom = 1557.68
 mouse_filter = 2
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
@@ -437,10 +508,10 @@ __meta__ = {
 }
 
 [node name="Panel5" type="Panel" parent="Liberation/YSort"]
-margin_left = -1512.87
-margin_top = 682.899
-margin_right = -1137.87
-margin_bottom = 894.899
+margin_left = -1896.55
+margin_top = 625.866
+margin_right = -1521.55
+margin_bottom = 837.866
 mouse_filter = 2
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
@@ -459,10 +530,10 @@ __meta__ = {
 }
 
 [node name="Panel6" type="Panel" parent="Liberation/YSort"]
-margin_left = -420.736
-margin_top = 675.94
-margin_right = -45.736
-margin_bottom = 887.94
+margin_left = -1054.11
+margin_top = 645.756
+margin_right = -679.108
+margin_bottom = 857.755
 mouse_filter = 2
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
@@ -470,10 +541,10 @@ __meta__ = {
 }
 
 [node name="Panel8" type="Panel" parent="Liberation/YSort"]
-margin_left = 922.138
-margin_top = 1193.49
-margin_right = 1297.14
-margin_bottom = 1405.49
+margin_left = 389.096
+margin_top = 1597.21
+margin_right = 764.096
+margin_bottom = 1809.21
 mouse_filter = 2
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
@@ -481,10 +552,10 @@ __meta__ = {
 }
 
 [node name="Panel9" type="Panel" parent="Liberation/YSort"]
-margin_left = -1695.24
-margin_top = 1177.29
-margin_right = -1320.24
-margin_bottom = 1389.29
+margin_left = -2143.77
+margin_top = 1358.72
+margin_right = -1768.77
+margin_bottom = 1570.72
 mouse_filter = 2
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
@@ -492,10 +563,10 @@ __meta__ = {
 }
 
 [node name="Panel10" type="Panel" parent="Liberation/YSort"]
-margin_left = 1333.07
-margin_top = 690.818
-margin_right = 1708.07
-margin_bottom = 902.818
+margin_left = 1015.39
+margin_top = 199.373
+margin_right = 1390.39
+margin_bottom = 411.373
 mouse_filter = 2
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
@@ -503,10 +574,10 @@ __meta__ = {
 }
 
 [node name="Panel2" type="Panel" parent="Liberation/YSort"]
-margin_left = -465.493
-margin_top = 1165.38
-margin_right = -182.493
-margin_bottom = 1371.38
+margin_left = -592.209
+margin_top = 1412.5
+margin_right = -224.209
+margin_bottom = 1618.5
 mouse_filter = 2
 custom_styles/panel = SubResource( 5 )
 __meta__ = {
@@ -514,10 +585,10 @@ __meta__ = {
 }
 
 [node name="Panel7" type="Panel" parent="Liberation/YSort"]
-margin_left = -1013.8
-margin_top = 1143.98
-margin_right = -664.796
-margin_bottom = 1441.98
+margin_left = -1044.03
+margin_top = 1345.57
+margin_right = -695.034
+margin_bottom = 1643.57
 mouse_filter = 2
 custom_styles/panel = SubResource( 5 )
 __meta__ = {
@@ -527,7 +598,7 @@ __meta__ = {
 [node name="Street" type="Panel" parent="Liberation/YSort"]
 margin_left = -1929.0
 margin_top = 421.0
-margin_right = 2355.0
+margin_right = 2025.0
 margin_bottom = 542.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 5 )
@@ -547,10 +618,10 @@ __meta__ = {
 }
 
 [node name="Street2" type="Panel" parent="Liberation/YSort"]
-margin_left = -1940.0
-margin_top = 968.0
-margin_right = 2387.0
-margin_bottom = 1089.0
+margin_left = -1854.0
+margin_top = 1170.0
+margin_right = 1909.0
+margin_bottom = 1291.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 5 )
 __meta__ = {
@@ -558,10 +629,10 @@ __meta__ = {
 }
 
 [node name="Street3" type="Panel" parent="Liberation/YSort"]
-margin_left = -1840.72
-margin_top = 1465.09
-margin_right = 2454.28
-margin_bottom = 1586.09
+margin_left = -2057.43
+margin_top = 1858.19
+margin_right = 2237.57
+margin_bottom = 1979.19
 mouse_filter = 2
 custom_styles/panel = SubResource( 5 )
 __meta__ = {
@@ -569,10 +640,10 @@ __meta__ = {
 }
 
 [node name="Street4" type="Panel" parent="Liberation/YSort"]
-margin_left = -2054.0
-margin_top = 2076.0
-margin_right = 2317.0
-margin_bottom = 2197.0
+margin_left = -2159.73
+margin_top = 2643.74
+margin_right = 2211.27
+margin_bottom = 2764.74
 mouse_filter = 2
 custom_styles/panel = SubResource( 5 )
 __meta__ = {
@@ -580,10 +651,10 @@ __meta__ = {
 }
 
 [node name="Street5" type="Panel" parent="Liberation/YSort"]
-margin_left = -1263.27
-margin_top = 2588.0
-margin_right = 1765.73
-margin_bottom = 2709.0
+margin_left = -1434.71
+margin_top = 2949.93
+margin_right = 1594.29
+margin_bottom = 3070.93
 mouse_filter = 2
 custom_styles/panel = SubResource( 5 )
 __meta__ = {
@@ -602,7 +673,7 @@ __meta__ = {
 }
 
 [node name="1f69c" type="Sprite" parent="Liberation/YSort"]
-position = Vector2( 2165.33, 2421.04 )
+position = Vector2( 1946.52, 917.887 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 9 )
 offset = Vector2( 0, -32 )
@@ -613,25 +684,29 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 20 )
 offset = Vector2( 0, -32 )
 
+[node name="1f3da" type="Sprite" parent="Liberation/YSort"]
+position = Vector2( -75.5085, 791.37 )
+texture = ExtResource( 22 )
+
+[node name="1f639" type="Sprite" parent="Liberation/YSort"]
+position = Vector2( -1843.33, 779.406 )
+texture = ExtResource( 10 )
+
 [node name="Player" parent="Liberation/YSort" instance=ExtResource( 2 )]
 position = Vector2( 186.96, 244.146 )
 
 [node name="Frame" type="StaticBody2D" parent="Liberation/YSort"]
 position = Vector2( 0, 8 )
 
-[node name="1f639" type="Sprite" parent="Liberation/YSort/Frame"]
-position = Vector2( 939.981, 101.591 )
-texture = ExtResource( 10 )
-
 [node name="1f911" type="Sprite" parent="Liberation/YSort/Frame"]
-position = Vector2( 558.27, 96.9613 )
+position = Vector2( 666.148, 195.85 )
 texture = ExtResource( 11 )
 
 [node name="Name2" type="RichTextLabel" parent="Liberation/YSort/Frame"]
-margin_left = -902.245
-margin_top = 189.887
-margin_right = -417.245
-margin_bottom = 283.887
+margin_left = -455.354
+margin_top = 235.142
+margin_right = 29.6462
+margin_bottom = 329.142
 custom_fonts/normal_font = SubResource( 7 )
 bbcode_enabled = true
 bbcode_text = "[wave][rainbow]Social Masks Party[/rainbow][/wave]"
@@ -647,7 +722,7 @@ rotation = 1.5708
 shape = SubResource( 8 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
-position = Vector2( 252.628, 2890.49 )
+position = Vector2( 201.831, 3157.18 )
 rotation = 1.5708
 shape = SubResource( 8 )
 
@@ -660,10 +735,10 @@ position = Vector2( 2679.3, 1956.74 )
 shape = SubResource( 8 )
 
 [node name="Panel3" type="Panel" parent="Liberation/YSort/Frame"]
-margin_left = 1476.56
-margin_top = 1143.69
-margin_right = 1768.56
-margin_bottom = 1432.69
+margin_left = 1532.0
+margin_top = 1410.8
+margin_right = 1824.0
+margin_bottom = 1699.8
 mouse_filter = 2
 custom_styles/panel = SubResource( 5 )
 __meta__ = {
@@ -702,24 +777,43 @@ texture = ExtResource( 18 )
 offset = Vector2( 0, -32 )
 
 [node name="1f340" type="Sprite" parent="Liberation/YSort"]
-position = Vector2( -547.794, 171.926 )
+position = Vector2( -123.794, 195.926 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 18 )
 offset = Vector2( 0, -32 )
 flip_h = true
 
 [node name="1f4fb" type="Sprite" parent="Liberation/YSort"]
-position = Vector2( -707.858, 58.8793 )
-scale = Vector2( 2, 2 )
+position = Vector2( -283.858, 82.8793 )
 texture = ExtResource( 12 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Liberation/YSort/1f4fb"]
 
 [node name="1f341" type="Sprite" parent="Liberation/YSort"]
-position = Vector2( -885.734, 176.233 )
+position = Vector2( -461.734, 200.233 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 18 )
 offset = Vector2( 0, -32 )
+
+[node name="1f3f3-1f308" type="Sprite" parent="Liberation/YSort"]
+position = Vector2( 326.312, 134.855 )
+texture = ExtResource( 24 )
+
+[node name="1f6a2" type="Sprite" parent="Liberation/YSort/1f3f3-1f308"]
+position = Vector2( 97.3716, -219.764 )
+texture = ExtResource( 25 )
+
+[node name="1f45c" type="Sprite" parent="Liberation/YSort/1f3f3-1f308/1f6a2"]
+position = Vector2( -1095.51, 846.813 )
+texture = ExtResource( 27 )
+
+[node name="1f45d" type="Sprite" parent="Liberation/YSort/1f3f3-1f308/1f6a2"]
+position = Vector2( -1019.13, 861.496 )
+texture = ExtResource( 28 )
+
+[node name="1f45b" type="Sprite" parent="Liberation/YSort/1f3f3-1f308/1f6a2"]
+position = Vector2( -931.334, 854.822 )
+texture = ExtResource( 26 )
 
 [node name="1f338" type="Sprite" parent="Liberation/YSort"]
 position = Vector2( -102.268, 1477.56 )
@@ -727,8 +821,18 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 18 )
 offset = Vector2( 0, -32 )
 
+[node name="1f3aa" type="Sprite" parent="Liberation/YSort"]
+position = Vector2( 1034.65, 772.976 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="2615" type="Sprite" parent="Liberation/YSort"]
+position = Vector2( 1132.69, 127.374 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 21 )
+
 [node name="1f339" type="Sprite" parent="Liberation/YSort"]
-position = Vector2( -45.3563, 1242.9 )
+position = Vector2( 849.437, 1427.9 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 18 )
 offset = Vector2( 0, -32 )
@@ -744,8 +848,8 @@ __meta__ = {
 [node name="RichTextLabel" type="RichTextLabel" parent="Liberation/YSort"]
 margin_left = 369.417
 margin_top = 620.845
-margin_right = 732.417
-margin_bottom = 927.845
+margin_right = 743.417
+margin_bottom = 1332.85
 custom_styles/focus = SubResource( 4 )
 custom_styles/normal = SubResource( 4 )
 custom_fonts/normal_font = SubResource( 19 )
@@ -759,13 +863,55 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-smoothing_enabled = true
-smoothing_speed = 4.0
-script = ExtResource( 13 )
+[node name="RichTextLabel3" type="RichTextLabel" parent="Liberation/YSort"]
+margin_left = 392.56
+margin_top = 2004.31
+margin_right = 765.561
+margin_bottom = 2615.31
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 19 )
+custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Coffe Place
+[img]res://img/64/2615.png[/img]
+[/center]"
+text = "Coffe Place
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Liberation/YSort"]
+margin_left = 2018.79
+margin_top = -38.0601
+margin_right = 2381.79
+margin_bottom = 544.94
+custom_styles/focus = SubResource( 4 )
+custom_styles/normal = SubResource( 23 )
+custom_fonts/normal_font = SubResource( 19 )
+custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Jobs Agency!
+[img]res://img/64/1f5a6.png[/img]
+[url=colector][img]res://img/32/267b.png[/img] Garbage colector[/url][/center]
+"
+text = "Jobs Agency!
+
+ Garbage colector
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1f3e9" type="Sprite" parent="Liberation/YSort"]
+position = Vector2( -1660.58, 1468.33 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 23 )
 
 [connection signal="timeout" from="OS/Panel/Clock/Timer" to="OS/Panel/Clock" method="_on_Timer_timeout"]
 [connection signal="meta_clicked" from="OS/Panel/ShortCuts" to="OS" method="_on_ShortCuts_meta_clicked"]
 [connection signal="released" from="OS/TouchScreenButton2" to="OS/Panel" method="_on_TouchScreenButton_released"]
 [connection signal="released" from="OS/Drag/TouchScreenButton" to="OS/Panel" method="_on_TouchScreenButton_released"]
+[connection signal="meta_clicked" from="Liberation/YSort/Space" to="Liberation/YSort/Space" method="_on_Space_meta_clicked"]

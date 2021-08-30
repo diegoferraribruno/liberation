@@ -10,6 +10,8 @@ func _on_TouchScreenButton_released():
 		if drag > 50:
 			$"../Drag".position.y = 42
 			margin_bottom = 42
+			$"messages".visible = false
 		else:
 			$"../Drag".position.y = 340
 			margin_bottom = 340
+			$"messages".visible = true
