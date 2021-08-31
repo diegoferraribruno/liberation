@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://games/liberation/liberation.gd" type="Script" id=1]
 [ext_resource path="res://games/liberation/LiberationPlayer.tscn" type="PackedScene" id=2]
@@ -29,6 +29,8 @@
 [ext_resource path="res://img/64/1f45c.png" type="Texture" id=27]
 [ext_resource path="res://img/64/1f45d.png" type="Texture" id=28]
 [ext_resource path="res://games/liberation/Scenes/Space.gd" type="Script" id=29]
+[ext_resource path="res://img/32/2622.png" type="Texture" id=30]
+[ext_resource path="res://games/liberation/Scenes/train.gd" type="Script" id=31]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -111,10 +113,10 @@ content_margin_right = 24.0
 content_margin_top = 24.0
 content_margin_bottom = 12.0
 bg_color = Color( 1, 0.478431, 0.796078, 0.611765 )
-border_width_left = 12
-border_width_top = 12
-border_width_right = 12
-border_width_bottom = 12
+border_width_left = 32
+border_width_top = 32
+border_width_right = 32
+border_width_bottom = 32
 border_color = Color( 0.85098, 0.85098, 0.85098, 1 )
 corner_radius_top_left = 8
 corner_radius_top_right = 8
@@ -136,20 +138,35 @@ extents = Vector2( 68.626, 65.717 )
 
 [sub_resource type="StyleBoxFlat" id=22]
 bg_color = Color( 0.843137, 0.905882, 0.937255, 0.619608 )
-border_width_left = 12
-border_width_top = 12
-border_width_right = 12
-border_width_bottom = 12
+border_width_left = 32
+border_width_top = 32
+border_width_right = 32
+border_width_bottom = 32
 border_color = Color( 0.85098, 0.85098, 0.85098, 1 )
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="RectangleShape2D" id=23]
-extents = Vector2( 60.7738, 2518.66 )
+[sub_resource type="CircleShape2D" id=23]
+radius = 16.0
 
-[sub_resource type="StyleBoxFlat" id=24]
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0.733333, 0.733333, 0.733333, 0.909804 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.619608, 0.635294, 0.647059, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 60.7738, 4897.02 )
+
+[sub_resource type="StyleBoxFlat" id=25]
 content_margin_left = 24.0
 content_margin_right = 24.0
 content_margin_top = 24.0
@@ -422,10 +439,10 @@ zoom = Vector2( 2, 2 )
 position = Vector2( 0, -8 )
 
 [node name="sky" type="Panel" parent="Liberation"]
-margin_left = -2331.73
-margin_top = 100.363
-margin_right = -1828.73
-margin_bottom = 4965.36
+margin_left = -4885.0
+margin_top = 87.0
+margin_right = -4382.0
+margin_bottom = 9689.0
 rect_rotation = -90.0
 custom_styles/panel = SubResource( 13 )
 __meta__ = {
@@ -460,10 +477,10 @@ __meta__ = {
 }
 
 [node name="Background" type="Panel" parent="Liberation"]
-margin_left = -2347.0
-margin_top = 3247.52
-margin_right = 870.0
-margin_bottom = 8265.52
+margin_left = -4900.0
+margin_top = 3248.0
+margin_right = -1683.0
+margin_bottom = 12889.0
 rect_rotation = -90.0
 custom_styles/panel = SubResource( 17 )
 __meta__ = {
@@ -474,10 +491,10 @@ __meta__ = {
 script = ExtResource( 1 )
 
 [node name="Space" type="RichTextLabel" parent="Liberation/YSort"]
-margin_left = -434.0
-margin_top = 621.0
-margin_right = -60.0
-margin_bottom = 1152.0
+margin_left = -3415.01
+margin_top = 82.7207
+margin_right = -3041.01
+margin_bottom = 613.721
 focus_mode = 2
 custom_styles/focus = SubResource( 18 )
 custom_styles/normal = SubResource( 18 )
@@ -572,15 +589,30 @@ __meta__ = {
 }
 
 [node name="Panel10" type="Panel" parent="Liberation/YSort"]
-margin_left = 1015.39
-margin_top = 199.373
-margin_right = 1390.39
-margin_bottom = 411.373
+margin_left = 43.0
+margin_top = 103.0
+margin_right = 338.0
+margin_bottom = 315.0
 mouse_filter = 2
 custom_styles/panel = SubResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Liberation/YSort/Panel10"]
+position = Vector2( 153.884, 89.9759 )
+gravity_scale = 0.0
+linear_velocity = Vector2( 4, 0 )
+linear_damp = 2.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="2622" type="Sprite" parent="Liberation/YSort/Panel10/RigidBody2D"]
+texture = ExtResource( 30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/YSort/Panel10/RigidBody2D"]
+shape = SubResource( 23 )
 
 [node name="Panel2" type="Panel" parent="Liberation/YSort"]
 margin_left = -592.209
@@ -605,10 +637,10 @@ __meta__ = {
 }
 
 [node name="Street" type="Panel" parent="Liberation/YSort"]
-margin_left = -1462.0
-margin_top = 421.0
-margin_right = 1822.0
-margin_bottom = 542.0
+margin_left = -2993.88
+margin_top = 397.919
+margin_right = 2959.12
+margin_bottom = 573.919
 mouse_filter = 2
 custom_styles/panel = SubResource( 22 )
 __meta__ = {
@@ -616,21 +648,21 @@ __meta__ = {
 }
 
 [node name="Street7" type="Panel" parent="Liberation/YSort"]
-margin_left = -1936.0
-margin_top = 572.0
-margin_right = 2348.0
-margin_bottom = 592.0
+margin_left = -3000.0
+margin_top = 592.0
+margin_right = 3000.0
+margin_bottom = 612.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 26 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Street2" type="Panel" parent="Liberation/YSort"]
-margin_left = -1854.0
-margin_top = 1170.0
-margin_right = 1909.0
-margin_bottom = 1291.0
+margin_left = -1816.87
+margin_top = 1126.98
+margin_right = 1946.13
+margin_bottom = 1247.98
 mouse_filter = 2
 custom_styles/panel = SubResource( 22 )
 __meta__ = {
@@ -672,7 +704,7 @@ __meta__ = {
 
 [node name="Street6" type="Panel" parent="Liberation/YSort"]
 margin_left = 1.0
-margin_top = 530.0
+margin_top = 540.0
 margin_right = 296.0
 margin_bottom = 2709.0
 mouse_filter = 2
@@ -687,9 +719,16 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 9 )
 offset = Vector2( 0, -32 )
 
-[node name="1f68b" type="Sprite" parent="Liberation/YSort"]
+[node name="train" type="KinematicBody2D" parent="Liberation/YSort"]
 position = Vector2( -273.204, 596.239 )
 scale = Vector2( 3, 3 )
+script = ExtResource( 31 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Liberation/YSort/train"]
+polygon = PoolVector2Array( -12.2968, -2.73906, -31.4295, -3.18401, -31.8745, -42.3393, -23.4205, -41.4494, -23.8654, -15.6425, 22.8875, -16.0267, 21.7663, -43.496, 29.0832, -44.564, 28.4935, -2.57236 )
+
+[node name="1f68b" type="Sprite" parent="Liberation/YSort/train"]
+position = Vector2( -2.66666, 6.66666 )
 texture = ExtResource( 20 )
 offset = Vector2( 0, -32 )
 
@@ -698,13 +737,16 @@ position = Vector2( -1843.33, 779.406 )
 texture = ExtResource( 10 )
 
 [node name="Player" parent="Liberation/YSort" instance=ExtResource( 2 )]
-position = Vector2( 186.96, 244.146 )
+position = Vector2( 286.96, 180.146 )
+
+[node name="Player2" parent="Liberation/YSort" instance=ExtResource( 2 )]
+position = Vector2( -273.441, 513.687 )
 
 [node name="Frame" type="StaticBody2D" parent="Liberation/YSort"]
 position = Vector2( 0, 8 )
 
 [node name="1f911" type="Sprite" parent="Liberation/YSort/Frame"]
-position = Vector2( 666.148, 195.85 )
+position = Vector2( 1250.49, 108.948 )
 texture = ExtResource( 11 )
 
 [node name="Name2" type="RichTextLabel" parent="Liberation/YSort/Frame"]
@@ -722,22 +764,22 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
-position = Vector2( 183.216, -30.0421 )
+position = Vector2( 5.42694, -55.4405 )
 rotation = 1.5708
-shape = SubResource( 23 )
+shape = SubResource( 24 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
-position = Vector2( 201.831, 3157.18 )
+position = Vector2( -39.4542, 3347.67 )
 rotation = 1.5708
-shape = SubResource( 23 )
+shape = SubResource( 24 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
-position = Vector2( -2175.07, 1740.55 )
-shape = SubResource( 23 )
+position = Vector2( -4892.7, 4788.36 )
+shape = SubResource( 24 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
-position = Vector2( 2475.89, 1990.64 )
-shape = SubResource( 23 )
+position = Vector2( 4825.24, 4784.47 )
+shape = SubResource( 24 )
 
 [node name="Panel3" type="Panel" parent="Liberation/YSort/Frame"]
 margin_left = 1532.0
@@ -851,10 +893,10 @@ __meta__ = {
 }
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Liberation/YSort"]
-margin_left = 369.0
-margin_top = 621.0
-margin_right = 743.0
-margin_bottom = 1147.0
+margin_left = 358.808
+margin_top = 611.512
+margin_right = 732.808
+margin_bottom = 1137.51
 custom_styles/focus = SubResource( 18 )
 custom_styles/normal = SubResource( 18 )
 custom_fonts/normal_font = SubResource( 20 )
@@ -889,12 +931,12 @@ __meta__ = {
 }
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Liberation/YSort"]
-margin_left = 2018.79
-margin_top = -38.0601
-margin_right = 2381.79
-margin_bottom = 544.94
+margin_left = 1239.62
+margin_top = 610.039
+margin_right = 1602.62
+margin_bottom = 1193.04
 custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 24 )
+custom_styles/normal = SubResource( 25 )
 custom_fonts/normal_font = SubResource( 20 )
 custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 bbcode_enabled = true
