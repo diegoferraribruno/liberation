@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/train.wav-9e8afda03caeabfab89213bfc57126be.sample"
+
+[deps]
+
+source_file="res://addons/kenney_ui_audio/train.wav"
+dest_files=[ "res://.import/train.wav-9e8afda03caeabfab89213bfc57126be.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

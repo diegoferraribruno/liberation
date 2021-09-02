@@ -14,6 +14,10 @@ config/name="Liberation"
 run/main_scene="res://liberation.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Server="*res://server/server.gd"
+
 [display]
 
 window/size/width=375

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/the_manor.ogg-159a05ea474324b65a6572ad833653a0.oggstr"
+
+[deps]
+
+source_file="res://addons/SFX/the_manor.ogg"
+dest_files=[ "res://.import/the_manor.ogg-159a05ea474324b65a6572ad833653a0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
