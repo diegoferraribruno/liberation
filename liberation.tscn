@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=83 format=2]
 
 [ext_resource path="res://games/liberation/liberation.gd" type="Script" id=1]
 [ext_resource path="res://games/liberation/LiberationPlayer.tscn" type="PackedScene" id=2]
@@ -11,8 +11,7 @@
 [ext_resource path="res://img/64/1f69c.png" type="Texture" id=9]
 [ext_resource path="res://img/64/1f639.png" type="Texture" id=10]
 [ext_resource path="res://img/64/1f6f4.png" type="Texture" id=11]
-[ext_resource path="res://img/64/1f4fb.png" type="Texture" id=12]
-[ext_resource path="res://games/liberation/Scenes/camera.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scripts/Radio.gd" type="Script" id=13]
 [ext_resource path="res://OS/Clock.gd" type="Script" id=14]
 [ext_resource path="res://OS/Panel.gd" type="Script" id=15]
 [ext_resource path="res://OS/OS.gd" type="Script" id=16]
@@ -33,9 +32,9 @@
 [ext_resource path="res://games/liberation/Scenes/train.gd" type="Script" id=31]
 [ext_resource path="res://addons/keyboard/Keyboard.tscn" type="PackedScene" id=32]
 [ext_resource path="res://img/64/2601.png" type="Texture" id=33]
-[ext_resource path="res://img/64/1f323.png" type="Texture" id=34]
 [ext_resource path="res://games/liberation/Scenes/liberation.tres" type="Gradient" id=35]
 [ext_resource path="res://addons/SFX/the_manor.ogg" type="AudioStream" id=36]
+[ext_resource path="res://img/64/1f3e7.png" type="Texture" id=37]
 [ext_resource path="res://addons/kenney_ui_audio/rollover5.wav" type="AudioStream" id=38]
 [ext_resource path="res://games/liberation/Scenes/clouds.gd" type="Script" id=39]
 [ext_resource path="res://games/liberation/Scenes/Sun.gd" type="Script" id=40]
@@ -50,52 +49,9 @@
 [ext_resource path="res://img/64/1f3b3.png" type="Texture" id=49]
 [ext_resource path="res://img/64/1f3ae.png" type="Texture" id=50]
 [ext_resource path="res://addons/SFX/ Hoover Horror.ogg" type="AudioStream" id=51]
-
-[sub_resource type="StyleBoxEmpty" id=1]
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.298039, 0.0509804, 0.321569, 0.705882 )
-border_width_bottom = 12
-border_color = Color( 0.968627, 0, 1, 0.737255 )
-border_blend = true
-
-[sub_resource type="DynamicFontData" id=3]
-font_path = "res://fonts/OpenSans-Bold.ttf"
-
-[sub_resource type="DynamicFont" id=4]
-size = 24
-outline_size = 4
-outline_color = Color( 0.211765, 0.211765, 0.211765, 0.415686 )
-use_filter = true
-extra_spacing_char = 3
-font_data = SubResource( 3 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 22
-outline_size = 2
-outline_color = Color( 1, 1, 1, 0.768627 )
-use_filter = true
-extra_spacing_bottom = -4
-font_data = SubResource( 3 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 37
-outline_size = 3
-outline_color = Color( 1, 1, 1, 0.768627 )
-use_filter = true
-font_data = SubResource( 3 )
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.141176, 0.141176, 0.141176, 0.701961 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 190, 8 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 46, 94 )
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 140, 42 )
+[ext_resource path="res://img/64/1f3f4-2620.png" type="Texture" id=52]
+[ext_resource path="res://img/64/1f3e3.png" type="Texture" id=53]
+[ext_resource path="res://img/64/1f4a9.png" type="Texture" id=54]
 
 [sub_resource type="Gradient" id=11]
 offsets = PoolRealArray( 0.123711, 1 )
@@ -122,6 +78,18 @@ gradient = ExtResource( 35 )
 texture = SubResource( 16 )
 region_rect = Rect2( 0, 0, 2048, 1 )
 
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 0.941176, 0.690196, 0.768627, 1 )
+border_width_left = 64
+border_width_top = 64
+border_width_right = 64
+border_width_bottom = 64
+border_color = Color( 0.921569, 0.843137, 0.929412, 1 )
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
 [sub_resource type="StyleBoxFlat" id=28]
 bg_color = Color( 0.694118, 0.843137, 0.227451, 1 )
 border_width_left = 64
@@ -129,22 +97,14 @@ border_width_top = 64
 border_width_right = 64
 border_width_bottom = 64
 border_color = Color( 0.921569, 0.843137, 0.929412, 1 )
-corner_radius_top_left = 64
-corner_radius_top_right = 64
-corner_radius_bottom_right = 64
-corner_radius_bottom_left = 64
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
-[sub_resource type="StyleBoxFlat" id=22]
+[sub_resource type="StyleBoxFlat" id=31]
 bg_color = Color( 0.941176, 0.690196, 0.768627, 1 )
-border_width_left = 64
-border_width_top = 48
-border_width_right = 64
-border_width_bottom = 64
-border_color = Color( 0.921569, 0.843137, 0.929412, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+border_color = Color( 0.941176, 0.690196, 0.768627, 1 )
 
 [sub_resource type="StyleBoxFlat" id=24]
 bg_color = Color( 0.580392, 0.596078, 0.607843, 1 )
@@ -167,7 +127,7 @@ bg_color = Color( 0.580392, 0, 0.980392, 0.486275 )
 border_width_left = 16
 border_width_top = 16
 border_width_right = 16
-border_width_bottom = 64
+border_width_bottom = 70
 border_color = Color( 0.85098, 0.85098, 0.85098, 1 )
 corner_radius_top_left = 8
 corner_radius_top_right = 8
@@ -185,7 +145,7 @@ use_filter = true
 font_data = SubResource( 19 )
 
 [sub_resource type="RectangleShape2D" id=21]
-extents = Vector2( 68.626, 65.717 )
+extents = Vector2( 65.8403, 55.6729 )
 
 [sub_resource type="StyleBoxFlat" id=29]
 content_margin_left = 24.0
@@ -194,18 +154,24 @@ content_margin_top = 24.0
 content_margin_bottom = 12.0
 bg_color = Color( 0.580392, 0, 0.980392, 1 )
 draw_center = false
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color( 0.85098, 0.85098, 0.85098, 1 )
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color( 0.901961, 0.772549, 0.0745098, 1 )
 
 [sub_resource type="CircleShape2D" id=23]
 radius = 32.0
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://fonts/OpenSans-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 37
+outline_size = 3
+outline_color = Color( 1, 1, 1, 0.768627 )
+use_filter = true
+font_data = SubResource( 3 )
 
 [sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 111.793, 4897.02 )
@@ -240,12 +206,1383 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="Games" type="Node"]
+[sub_resource type="StyleBoxEmpty" id=1]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-position = Vector2( 0, -8 )
-color = Color( 0.286275, 0.286275, 0.286275, 1 )
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.298039, 0.0509804, 0.321569, 0.705882 )
+border_width_bottom = 12
+border_color = Color( 0.968627, 0, 1, 0.737255 )
+border_blend = true
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+outline_size = 4
+outline_color = Color( 0.211765, 0.211765, 0.211765, 0.415686 )
+use_filter = true
+extra_spacing_char = 3
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 22
+outline_size = 2
+outline_color = Color( 1, 1, 1, 0.768627 )
+use_filter = true
+extra_spacing_bottom = -4
+font_data = SubResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.141176, 0.141176, 0.141176, 0.701961 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 190, 8 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 46, 94 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 140, 42 )
+
+[node name="RainbowGameJam" type="Node"]
+__meta__ = {
+"_edit_vertical_guides_": [ -5819.24 ]
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="sky" type="Panel" parent="ParallaxBackground"]
+margin_top = 2434.0
+margin_right = 2412.0
+margin_bottom = 5717.0
+rect_rotation = -90.0
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sun" type="Node2D" parent="ParallaxBackground"]
+position = Vector2( 157, 160 )
+script = ExtResource( 40 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Panel2" type="Panel" parent="ParallaxBackground/Sun"]
+margin_left = -97.7787
+margin_top = 1.97205
+margin_right = 158.221
+margin_bottom = 257.972
+custom_styles/panel = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Liberation" type="Node2D" parent="."]
+
+[node name="clouds" type="Node" parent="Liberation"]
+
+[node name="2601" type="Sprite" parent="Liberation/clouds"]
+position = Vector2( -631.361, -82.0365 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 33 )
+script = ExtResource( 39 )
+
+[node name="2602" type="Sprite" parent="Liberation/clouds"]
+position = Vector2( 812.049, -138.888 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 33 )
+script = ExtResource( 39 )
+
+[node name="2603" type="Sprite" parent="Liberation/clouds"]
+position = Vector2( 1817.47, -19.2831 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 33 )
+script = ExtResource( 41 )
+
+[node name="2604" type="Sprite" parent="Liberation/clouds"]
+position = Vector2( 2563.01, -183.345 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 33 )
+script = ExtResource( 39 )
+
+[node name="2609" type="Sprite" parent="Liberation/clouds"]
+position = Vector2( 3545.17, -89.1646 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 33 )
+script = ExtResource( 41 )
+
+[node name="2610" type="Sprite" parent="Liberation/clouds"]
+position = Vector2( 4670.21, -129.104 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 33 )
+script = ExtResource( 39 )
+
+[node name="2605" type="Sprite" parent="Liberation/clouds"]
+position = Vector2( -4522, -192.91 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 33 )
+script = ExtResource( 41 )
+
+[node name="2606" type="Sprite" parent="Liberation/clouds"]
+position = Vector2( -3451.52, -81.8318 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 33 )
+script = ExtResource( 39 )
+
+[node name="2607" type="Sprite" parent="Liberation/clouds"]
+position = Vector2( -2146.12, -153.312 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 33 )
+script = ExtResource( 41 )
+
+[node name="2608" type="Sprite" parent="Liberation/clouds"]
+position = Vector2( -1493.99, -228.754 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 33 )
+script = ExtResource( 39 )
+
+[node name="Background" type="Panel" parent="Liberation"]
+anchor_left = -0.000208333
+anchor_top = 0.144289
+anchor_right = 0.255792
+anchor_bottom = 0.144288
+margin_left = -4996.92
+margin_top = 3341.76
+margin_right = -1661.92
+margin_bottom = 13469.8
+rect_rotation = -89.9999
+custom_styles/panel = SubResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="SunnyStreet" type="Panel" parent="Liberation"]
+margin_left = -3.0
+margin_top = 203.0
+margin_right = 370.0
+margin_bottom = 2818.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="Liberation"]
+margin_left = 1197.0
+margin_top = 2201.57
+margin_right = 1933.0
+margin_bottom = 2642.57
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Street2" type="Panel" parent="Liberation"]
+margin_left = -997.449
+margin_top = 2337.86
+margin_right = 1270.55
+margin_bottom = 2562.86
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Return" type="Panel" parent="Liberation"]
+margin_left = -1693.0
+margin_top = 2171.0
+margin_right = -916.0
+margin_bottom = 2752.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="square2" type="Panel" parent="Liberation"]
+margin_left = -4287.0
+margin_top = 1105.0
+margin_right = -2523.0
+margin_bottom = 2342.0
+rect_pivot_offset = Vector2( 5840.58, 721.835 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Street" type="Panel" parent="Liberation"]
+margin_left = -2409.0
+margin_top = 512.0
+margin_right = 4383.0
+margin_bottom = 857.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Street6" type="Panel" parent="Liberation"]
+margin_left = -816.0
+margin_top = 2764.0
+margin_right = 1197.0
+margin_bottom = 3177.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Street3" type="Panel" parent="Liberation"]
+margin_left = -2120.0
+margin_top = 1828.0
+margin_right = 2884.0
+margin_bottom = 2071.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Street4" type="Panel" parent="Liberation"]
+margin_left = -2323.0
+margin_top = 1121.0
+margin_right = 2898.0
+margin_bottom = 1404.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Street5" type="Panel" parent="Liberation"]
+margin_left = -3291.0
+margin_top = 3038.0
+margin_right = 3463.0
+margin_bottom = 3287.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Street11" type="Panel" parent="Liberation"]
+margin_left = -480.0
+margin_top = 1121.0
+margin_right = 876.0
+margin_bottom = 2081.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Street9" type="Panel" parent="Liberation"]
+margin_left = 60.0
+margin_top = 766.0
+margin_right = 311.0
+margin_bottom = 2912.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Street7" type="Panel" parent="Liberation"]
+margin_left = -2400.0
+margin_top = 792.0
+margin_right = -2099.0
+margin_bottom = 3039.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Street8" type="Panel" parent="Liberation"]
+margin_left = 2850.0
+margin_top = 774.0
+margin_right = 3147.0
+margin_bottom = 2982.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="square" type="Panel" parent="Liberation"]
+margin_left = -325.0
+margin_top = 299.0
+margin_right = 707.0
+margin_bottom = 531.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="square3" type="Panel" parent="Liberation"]
+margin_left = -202.0
+margin_top = 1350.0
+margin_right = 604.0
+margin_bottom = 1857.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rails" type="Panel" parent="Liberation"]
+margin_left = -4229.17
+margin_top = 437.172
+margin_right = 4391.83
+margin_bottom = 521.172
+mouse_filter = 2
+custom_styles/panel = SubResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rails2" type="Panel" parent="Liberation"]
+margin_left = -4229.17
+margin_top = 2975.0
+margin_right = 4391.83
+margin_bottom = 3059.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel7" type="Panel" parent="Liberation"]
+modulate = Color( 0.537255, 1, 0.458824, 1 )
+margin_left = -4074.96
+margin_top = 1441.47
+margin_right = -3526.96
+margin_bottom = 2241.47
+rect_pivot_offset = Vector2( 5628.58, 385.835 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel8" type="Panel" parent="Liberation"]
+modulate = Color( 0.537255, 1, 0.458824, 1 )
+margin_left = -3328.96
+margin_top = 1464.93
+margin_right = -2843.96
+margin_bottom = 2201.93
+rect_pivot_offset = Vector2( 4882.58, 362.38 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1f3f4-2620" type="Sprite" parent="Liberation"]
+position = Vector2( 3018.65, -88.4865 )
+texture = ExtResource( 52 )
+
+[node name="Panel6" type="Panel" parent="Liberation"]
+modulate = Color( 0.537255, 1, 0.458824, 1 )
+margin_left = 3136.0
+margin_top = 829.0
+margin_right = 4381.0
+margin_bottom = 2957.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel5" type="Panel" parent="Liberation"]
+margin_left = 3394.0
+margin_top = 936.0
+margin_right = 3691.0
+margin_bottom = 1266.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="square4" type="Panel" parent="Liberation"]
+margin_left = -1460.0
+margin_top = 2349.0
+margin_right = -1162.0
+margin_bottom = 2557.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="square5" type="Panel" parent="Liberation"]
+margin_left = 1435.76
+margin_top = 2258.73
+margin_right = 1733.76
+margin_bottom = 2569.73
+mouse_filter = 2
+custom_styles/panel = SubResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2615" type="Sprite" parent="Liberation"]
+position = Vector2( 3608.58, 1187.22 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 21 )
+
+[node name="1f3e3" type="Sprite" parent="Liberation/2615"]
+position = Vector2( -1512.08, 511.745 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 53 )
+
+[node name="1f3e7" type="Sprite" parent="Liberation/2615"]
+position = Vector2( -866.133, -72.6991 )
+texture = ExtResource( 37 )
+
+[node name="YSort" type="YSort" parent="Liberation"]
+script = ExtResource( 1 )
+
+[node name="Space" type="RichTextLabel" parent="Liberation/YSort"]
+margin_left = -3899.48
+margin_top = -112.643
+margin_right = -3576.48
+margin_bottom = 275.357
+focus_mode = 2
+custom_styles/focus = SubResource( 18 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/normal_font = SubResource( 20 )
+custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][url=https://diegoferraribruno.itch.io/gato-mia-2] Play Gato Mia! Another game by Diego Ferrari Bruno[/url][/center]"
+meta_underlined = false
+text = " Play Gato Mia! Another game by Diego Ferrari Bruno"
+selection_enabled = true
+script = ExtResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1f639" type="Sprite" parent="Liberation/YSort/Space"]
+position = Vector2( 252.758, 250.032 )
+rotation = 0.523599
+texture = ExtResource( 10 )
+
+[node name="1f3da" type="Sprite" parent="Liberation/YSort/Space"]
+position = Vector2( 153.155, 223.036 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 22 )
+
+[node name="Area2D" type="Area2D" parent="Liberation/YSort/Space"]
+position = Vector2( -34.7104, 103.464 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/YSort/Space/Area2D"]
+position = Vector2( 179.894, 147.547 )
+shape = SubResource( 21 )
+
+[node name="Store" type="Panel" parent="Liberation/YSort"]
+margin_left = -390.506
+margin_top = 860.008
+margin_right = -15.5063
+margin_bottom = 1120.01
+mouse_filter = 2
+custom_styles/panel = SubResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1f45c" type="Sprite" parent="Liberation/YSort/Store"]
+position = Vector2( 78.5515, 129.017 )
+texture = ExtResource( 27 )
+
+[node name="1f45d" type="Sprite" parent="Liberation/YSort/Store"]
+position = Vector2( 173.266, 129.039 )
+texture = ExtResource( 28 )
+
+[node name="1f45b" type="Sprite" parent="Liberation/YSort/Store"]
+position = Vector2( 281.668, 131.607 )
+texture = ExtResource( 26 )
+
+[node name="Panel8" type="Panel" parent="Liberation/YSort"]
+margin_left = 1331.99
+margin_top = 879.157
+margin_right = 1706.99
+margin_bottom = 1131.16
+mouse_filter = 2
+custom_styles/panel = SubResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel11" type="Panel" parent="Liberation/YSort"]
+margin_left = -395.053
+margin_top = 2078.36
+margin_right = -20.053
+margin_bottom = 2330.36
+mouse_filter = 2
+custom_styles/panel = SubResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel12" type="Panel" parent="Liberation/YSort"]
+margin_left = -840.562
+margin_top = 2085.91
+margin_right = -465.562
+margin_bottom = 2337.91
+mouse_filter = 2
+custom_styles/panel = SubResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel13" type="Panel" parent="Liberation/YSort"]
+margin_left = -2086.48
+margin_top = 2093.46
+margin_right = -1711.48
+margin_bottom = 2345.46
+mouse_filter = 2
+custom_styles/panel = SubResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel14" type="Panel" parent="Liberation/YSort"]
+margin_left = -2094.03
+margin_top = 2433.26
+margin_right = -1719.03
+margin_bottom = 2685.26
+mouse_filter = 2
+custom_styles/panel = SubResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel9" type="Panel" parent="Liberation/YSort"]
+margin_left = 3749.24
+margin_top = 2321.74
+margin_right = 4102.24
+margin_bottom = 2629.74
+mouse_filter = 2
+custom_styles/panel = SubResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel10" type="Panel" parent="Liberation/YSort"]
+margin_left = 1528.0
+margin_top = 132.0
+margin_right = 1972.0
+margin_bottom = 351.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Liberation/YSort/Panel10"]
+position = Vector2( 176.525, 97.1031 )
+mass = 0.262245
+gravity_scale = 0.0
+linear_velocity = Vector2( 6, 0 )
+linear_damp = 1.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="1f3d0" type="Sprite" parent="Liberation/YSort/Panel10/RigidBody2D"]
+texture = ExtResource( 30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/YSort/Panel10/RigidBody2D"]
+shape = SubResource( 23 )
+
+[node name="1f69c" type="Sprite" parent="Liberation/YSort"]
+position = Vector2( 3419.77, 348.081 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 9 )
+offset = Vector2( 0, -32 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Liberation/YSort"]
+position = Vector2( -3773.35, 1876.7 )
+mass = 0.262245
+gravity_scale = 0.0
+linear_velocity = Vector2( 6, 0 )
+linear_damp = 1.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="1f3d0" type="Sprite" parent="Liberation/YSort/RigidBody2D"]
+texture = ExtResource( 30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/YSort/RigidBody2D"]
+shape = SubResource( 23 )
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="Liberation/YSort"]
+position = Vector2( -3018.28, 1992.33 )
+mass = 0.262245
+gravity_scale = 0.0
+linear_velocity = Vector2( 6, 0 )
+linear_damp = 1.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="1f3d0" type="Sprite" parent="Liberation/YSort/RigidBody2D2"]
+texture = ExtResource( 30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/YSort/RigidBody2D2"]
+shape = SubResource( 23 )
+
+[node name="train" type="KinematicBody2D" parent="Liberation/YSort"]
+position = Vector2( -696.313, 471.778 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 31 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Liberation/YSort/train"]
+polygon = PoolVector2Array( -29.9908, -2.79146, -27.8909, -29.4598, -24.1112, -29.4598, -24.5312, -7.41116, 21.246, -7.41116, 21.036, -30.7197, 25.4457, -30.7197, 25.8657, -2.58147 )
+
+[node name="1f68b" type="Sprite" parent="Liberation/YSort/train"]
+position = Vector2( -0.986057, 6.58066 )
+texture = ExtResource( 20 )
+offset = Vector2( 0, -32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Liberation/YSort/train"]
+position = Vector2( 59.7607, 0 )
+polygon = PoolVector2Array( -29.9908, -2.79146, -27.8909, -29.4598, -24.1112, -29.4598, -24.5312, -7.41116, 21.246, -7.41116, 21.036, -30.7197, 25.4457, -30.7197, 25.8657, -2.58147 )
+
+[node name="1f68b2" type="Sprite" parent="Liberation/YSort/train"]
+position = Vector2( 58.7746, 6.58066 )
+texture = ExtResource( 20 )
+offset = Vector2( 0, -32 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Liberation/YSort/train"]
+stream = ExtResource( 38 )
+volume_db = -26.0
+pitch_scale = 0.33
+autoplay = true
+max_distance = 1500.0
+attenuation = 1.46409
+
+[node name="1f3f3-1f308" type="Sprite" parent="Liberation/YSort/train"]
+position = Vector2( 73.9396, -64.7837 )
+texture = ExtResource( 24 )
+flip_h = true
+
+[node name="train2" type="KinematicBody2D" parent="Liberation/YSort"]
+position = Vector2( -2316.31, 3009 )
+scale = Vector2( 3, 3 )
+script = ExtResource( 31 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Liberation/YSort/train2"]
+polygon = PoolVector2Array( -29.9908, -2.79146, -27.8909, -29.4598, -24.1112, -29.4598, -24.5312, -7.41116, 21.246, -7.41116, 21.036, -30.7197, 25.4457, -30.7197, 25.8657, -2.58147 )
+
+[node name="1f68b3" type="Sprite" parent="Liberation/YSort/train2"]
+show_behind_parent = true
+position = Vector2( -0.986084, 6.58063 )
+z_index = 1
+texture = ExtResource( 20 )
+offset = Vector2( 0, -32 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Liberation/YSort/train2"]
+position = Vector2( 59.7607, 0 )
+polygon = PoolVector2Array( -29.9908, -2.79146, -27.8909, -29.4598, -24.1112, -29.4598, -24.5312, -7.41116, 21.246, -7.41116, 21.036, -30.7197, 25.4457, -30.7197, 25.8657, -2.58147 )
+
+[node name="1f68b2" type="Sprite" parent="Liberation/YSort/train2"]
+position = Vector2( 58.7746, 6.58066 )
+texture = ExtResource( 20 )
+offset = Vector2( 0, -32 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Liberation/YSort/train2"]
+stream = ExtResource( 38 )
+volume_db = -23.057
+pitch_scale = 0.33
+autoplay = true
+max_distance = 1500.0
+attenuation = 1.41421
+
+[node name="1f6f4" type="Sprite" parent="Liberation/YSort"]
+position = Vector2( -181.002, 611.502 )
+texture = ExtResource( 11 )
+
+[node name="Player" parent="Liberation/YSort" instance=ExtResource( 2 )]
+position = Vector2( 176.225, 341.086 )
+
+[node name="Frame" type="StaticBody2D" parent="Liberation/YSort"]
+position = Vector2( 0, 8 )
+
+[node name="Name2" type="RichTextLabel" parent="Liberation/YSort/Frame"]
+margin_left = -1053.35
+margin_top = 88.6335
+margin_right = -680.348
+margin_bottom = 152.634
+custom_fonts/normal_font = SubResource( 6 )
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
+position = Vector2( 5.42694, -55.4405 )
+rotation = 1.5708
+shape = SubResource( 25 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
+position = Vector2( 0.0970688, 3525.13 )
+rotation = 1.5708
+shape = SubResource( 25 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
+position = Vector2( -4659.95, 4654.1 )
+shape = SubResource( 25 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
+position = Vector2( 4903.34, 4473.67 )
+shape = SubResource( 25 )
+
+[node name="Panel3" type="Panel" parent="Liberation/YSort/Frame"]
+margin_left = -3659.31
+margin_top = 2334.58
+margin_right = -3237.31
+margin_bottom = 2607.58
+rect_pivot_offset = Vector2( 5191.55, -743.342 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1f32e" type="Sprite" parent="Liberation/YSort/Frame/Panel3"]
+position = Vector2( -2596.47, -772.468 )
+texture = ExtResource( 42 )
+
+[node name="Trees" type="Node2D" parent="Liberation/YSort"]
+
+[node name="1f333" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -1187, 537.19 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f334" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 516.16, 258.999 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+
+[node name="1f335" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 935.504, 384.561 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f336" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -156.911, 250.81 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+flip_h = true
+
+[node name="1f342" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -1311.51, 2428.32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f343" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -399.362, 3141.6 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+
+[node name="1f344" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 3077.83, 255.623 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f360" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 3196.84, 1078.08 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f361" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 2535.46, 1346.83 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f362" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 4179.74, 1635 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f363" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 3179.61, 1821.47 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f364" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 3179.61, 1821.47 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f365" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 1917.09, 1949.83 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f375" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -100.258, 1455.44 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f376" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 389.743, 1751.84 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f377" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 199.697, 1421.8 )
+scale = Vector2( 2.5, 2.3 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f366" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 1403.64, 2319.28 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f367" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 3260.33, 2655.63 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f368" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 1553.62, 1827.31 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( -2961.85, -378.451 )
+
+[node name="1f369" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -2632.67, 2790.18 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f374" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 2829.8, 2763.27 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( 0, -32 )
+
+[node name="1f370" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 1553.62, 1827.31 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( -2541.04, -211.564 )
+
+[node name="1f371" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 1553.62, 1827.31 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( -2985.66, 313.177 )
+
+[node name="1f372" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 1553.62, 1827.31 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( -2102.57, -256.188 )
+
+[node name="1f373" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 1553.62, 1827.31 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 19 )
+offset = Vector2( -2385.45, 325.93 )
+
+[node name="1f345" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 521.019, 3214.99 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+flip_h = true
+
+[node name="1f348" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -1021.53, 3181.2 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+flip_h = true
+
+[node name="1f349" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -2310.6, 3226.32 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+flip_h = true
+
+[node name="1f346" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -1558.52, 3194.09 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+
+[node name="1f351" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -2687.3, 652.258 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+
+[node name="1f352" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -2290.39, 318.124 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+flip_h = true
+
+[node name="1f353" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -3296.5, 229.94 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+
+[node name="1f354" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 4243.52, 3216.63 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+
+[node name="1f355" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -3673.68, 3197.63 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+flip_h = true
+
+[node name="1f356" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 3210.84, 3255.28 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+
+[node name="1f357" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 2302.73, 238.854 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+
+[node name="1f358" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 4070.44, 353.047 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+flip_h = true
+
+[node name="1f359" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 2544.89, 3217.23 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+
+[node name="1f350" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 1054.55, 3256.21 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+
+[node name="1f347" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 1683.87, 3177.24 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+flip_h = true
+
+[node name="1f337" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 3742.31, 320.825 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+
+[node name="1f340" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -1315.82, 247.302 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+flip_h = true
+
+[node name="1f338" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -56.9622, 1757.11 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+
+[node name="1f339" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( 505.839, 1449.08 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+flip_h = true
+
+[node name="1f341" type="Sprite" parent="Liberation/YSort/Trees"]
+position = Vector2( -416.648, 237.739 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 18 )
+offset = Vector2( 0, -32 )
+
+[node name="Radio" type="Node2D" parent="Liberation/YSort/Trees"]
+position = Vector2( 2664.89, 241.486 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Liberation/YSort/Trees/Radio"]
+stream = ExtResource( 51 )
+volume_db = -16.0
+autoplay = true
+max_distance = 1200.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Liberation/YSort/Trees/Radio"]
+margin_left = -227.416
+margin_top = -112.791
+margin_right = 226.584
+margin_bottom = 215.209
+custom_fonts/normal_font = SubResource( 30 )
+custom_colors/default_color = Color( 0.764706, 0.231373, 0.231373, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][wave][rainbow]Rainbow Jam Party[/rainbow][/wave]
+[url=play/pause][img]res://img/64/1f4fb.png[/img][/url]
+[url=ttps://ferretentertainment.bandcamp.com/album/trans-game-jam-july-2021]Music:  Hoover Horror 
+by Harriet Ford Music[/url][/center]"
+text = "Rainbow Jam Party
+
+Music:  Hoover Horror 
+by Harriet Ford Music"
+scroll_active = false
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Radio2" type="Node2D" parent="Liberation/YSort/Trees"]
+position = Vector2( -2808.07, 157.217 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Liberation/YSort/Trees/Radio2"]
+stream = ExtResource( 36 )
+volume_db = -16.0
+autoplay = true
+max_distance = 1200.0
+attenuation = 1.6245
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Liberation/YSort/Trees/Radio2"]
+margin_left = -276.704
+margin_top = -81.4346
+margin_right = 278.296
+margin_bottom = 101.565
+custom_fonts/normal_font = SubResource( 30 )
+custom_colors/default_color = Color( 0.764706, 0.231373, 0.231373, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][wave][rainbow]Rainbow Jam Party[/rainbow][/wave]
+[url=play/pause][img]res://img/64/1f4fb.png[/img][/url]
+[url=https://hollisaster.itch.io/hollis-asters-dark-music-pack]Music:  The manor by Hollis Aster[/url]"
+text = "Rainbow Jam Party
+
+Music:  The manor by Hollis Aster"
+scroll_active = false
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1f6a2" type="Sprite" parent="Liberation/YSort"]
+position = Vector2( 470.331, -12.5169 )
+texture = ExtResource( 25 )
+
+[node name="1f3aa" type="Sprite" parent="Liberation/YSort"]
+position = Vector2( 3324.77, 1809 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="1f4a9poop" type="Sprite" parent="Liberation/YSort"]
+position = Vector2( 1553.62, 1827.31 )
+texture = ExtResource( 54 )
+offset = Vector2( -4428.08, -515.399 )
+
+[node name="Name3" type="RichTextLabel" parent="Liberation/YSort"]
+margin_left = 9.61081
+margin_top = 141.748
+margin_right = 477.611
+margin_bottom = 235.748
+custom_fonts/normal_font = SubResource( 27 )
+bbcode_enabled = true
+bbcode_text = "[wave][color=red]Sunrise beach[/color][/wave]"
+text = "Sunrise beach"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name4" type="RichTextLabel" parent="Liberation/YSort"]
+margin_left = 40.8018
+margin_top = 2776.5
+margin_right = 508.802
+margin_bottom = 2870.5
+custom_fonts/normal_font = SubResource( 27 )
+custom_colors/default_color = Color( 0.803922, 0, 0.894118, 1 )
+bbcode_enabled = true
+bbcode_text = "[wave]Sunset beach[/wave]"
+text = "Sunset beach"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Liberation/YSort"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Liberation/YSort"]
+margin_left = 415.065
+margin_top = 866.655
+margin_right = 789.065
+margin_bottom = 1130.66
+custom_styles/focus = SubResource( 18 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/normal_font = SubResource( 20 )
+custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
+Internet experience not Rated![/center]"
+text = " 
+Internet experience not Rated!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="Liberation/YSort"]
+margin_left = -909.014
+margin_top = 858.027
+margin_right = -535.014
+margin_bottom = 1110.03
+custom_styles/focus = SubResource( 18 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/normal_font = SubResource( 20 )
+custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
+Internet experience not Rated![/center]"
+text = " 
+Internet experience not Rated!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel10" type="RichTextLabel" parent="Liberation/YSort"]
+margin_left = -1439.58
+margin_top = 850.027
+margin_right = -1065.58
+margin_bottom = 1102.03
+custom_styles/focus = SubResource( 18 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/normal_font = SubResource( 20 )
+custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
+Internet experience not Rated![/center]"
+text = " 
+Internet experience not Rated!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel8" type="RichTextLabel" parent="Liberation/YSort"]
+margin_left = 888.136
+margin_top = 868.052
+margin_right = 1262.14
+margin_bottom = 1132.05
+custom_styles/focus = SubResource( 18 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/normal_font = SubResource( 20 )
+custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
+Internet experience not Rated![/center]"
+text = " 
+Internet experience not Rated!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Liberation/YSort"]
+margin_left = 4446.31
+margin_top = 2904.71
+margin_right = 4741.31
+margin_bottom = 3168.71
+custom_styles/focus = SubResource( 18 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/normal_font = SubResource( 20 )
+custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
+Internet experience not Rated![/center]"
+text = " 
+Internet experience not Rated!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Liberation/YSort"]
+margin_left = -4518.43
+margin_top = 2842.71
+margin_right = -4235.43
+margin_bottom = 3163.71
+custom_styles/focus = SubResource( 18 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/normal_font = SubResource( 20 )
+custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
+Internet experience not Rated![/center]"
+text = " 
+Internet experience not Rated!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel9" type="RichTextLabel" parent="Liberation/YSort"]
+margin_left = -1924.4
+margin_top = 72.7288
+margin_right = -1672.4
+margin_bottom = 373.729
+custom_styles/focus = SubResource( 18 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/normal_font = SubResource( 20 )
+custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
+Internet experience not Rated![/center]"
+text = " 
+Internet experience not Rated!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Liberation/YSort"]
+margin_left = 3795.0
+margin_top = 936.0
+margin_right = 4063.0
+margin_bottom = 1164.0
+custom_styles/focus = SubResource( 18 )
+custom_styles/normal = SubResource( 18 )
+custom_fonts/normal_font = SubResource( 20 )
+custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Coffe Place
+[img]res://img/64/2615.png[/img]
+[/center]"
+text = "Coffe Place
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Liberation/YSort"]
+margin_left = 4408.0
+margin_top = 141.0
+margin_right = 4771.0
+margin_bottom = 2820.0
+custom_styles/focus = SubResource( 18 )
+custom_styles/normal = SubResource( 26 )
+custom_fonts/normal_font = SubResource( 20 )
+custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Jobs Agency!
+[img]res://img/64/1f5a6.png[/img]
+[url=colector][img]res://img/32/267b.png[/img] Garbage colector
+Urbanist
+[/url][/center]
+"
+text = "Jobs Agency!
+
+ Garbage colector
+Urbanist
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1f3e9" type="Sprite" parent="Liberation/YSort"]
+position = Vector2( -1768.9, 1731.58 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 23 )
+
+[node name="placeholders" type="Node" parent="Liberation"]
+
+[node name="1f3a5" type="Sprite" parent="Liberation/placeholders"]
+position = Vector2( 2449.61, 954.385 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 48 )
+
+[node name="1f3a8" type="Sprite" parent="Liberation/placeholders"]
+position = Vector2( 3920.01, 2448.69 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 43 )
+
+[node name="1f3ac" type="Sprite" parent="Liberation/placeholders"]
+position = Vector2( 1494.48, 995.076 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 45 )
+
+[node name="1f3ad" type="Sprite" parent="Liberation/placeholders"]
+position = Vector2( 3738.55, 2007.8 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 47 )
+
+[node name="1f3ae" type="Sprite" parent="Liberation/placeholders"]
+position = Vector2( 2177.66, 973.621 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 50 )
+
+[node name="1f3b0" type="Sprite" parent="Liberation/placeholders"]
+position = Vector2( -1898.63, 2171.99 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 46 )
+
+[node name="1f3b2" type="Sprite" parent="Liberation/placeholders"]
+position = Vector2( -640.451, 2173.2 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 44 )
+
+[node name="1f3b3" type="Sprite" parent="Liberation/placeholders"]
+position = Vector2( -1583.5, 1011.47 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 49 )
 
 [node name="OS" type="CanvasLayer" parent="."]
 script = ExtResource( 16 )
@@ -315,7 +1652,7 @@ __meta__ = {
 }
 
 [node name="ShortCuts" type="RichTextLabel" parent="OS/Panel"]
-margin_left = 240.0
+margin_left = 246.0
 margin_top = 2.0
 margin_right = 392.0
 margin_bottom = 42.0
@@ -495,1138 +1832,9 @@ texture = ExtResource( 4 )
 [node name="Keyboard" parent="OS" instance=ExtResource( 32 )]
 visible = false
 
-[node name="Frames" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Camera2D" parent="." instance=ExtResource( 13 )]
-position = Vector2( 0, -8 )
-zoom = Vector2( 2, 2 )
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="sky" type="Panel" parent="ParallaxBackground"]
-margin_top = 2434.0
-margin_right = 2412.0
-margin_bottom = 5717.0
-rect_rotation = -90.0
-custom_styles/panel = SubResource( 13 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Liberation" type="Node2D" parent="."]
-position = Vector2( 0, -8 )
-
-[node name="Sun" type="Node2D" parent="Liberation"]
-position = Vector2( 157, 8 )
-script = ExtResource( 40 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Panel2" type="Panel" parent="Liberation/Sun"]
-margin_left = -97.7787
-margin_top = 1.97205
-margin_right = 158.221
-margin_bottom = 257.972
-custom_styles/panel = SubResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="clouds" type="Node" parent="Liberation"]
-
-[node name="2601" type="Sprite" parent="Liberation/clouds"]
-position = Vector2( -631.361, -82.0365 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 33 )
-script = ExtResource( 39 )
-
-[node name="2602" type="Sprite" parent="Liberation/clouds"]
-position = Vector2( 812.049, -138.888 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 33 )
-script = ExtResource( 39 )
-
-[node name="2603" type="Sprite" parent="Liberation/clouds"]
-position = Vector2( 1817.47, -19.2831 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 33 )
-script = ExtResource( 41 )
-
-[node name="2604" type="Sprite" parent="Liberation/clouds"]
-position = Vector2( 2563.01, -183.345 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 33 )
-script = ExtResource( 39 )
-
-[node name="2609" type="Sprite" parent="Liberation/clouds"]
-position = Vector2( 3545.17, -89.1646 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 33 )
-script = ExtResource( 41 )
-
-[node name="2610" type="Sprite" parent="Liberation/clouds"]
-position = Vector2( 4670.21, -129.104 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 33 )
-script = ExtResource( 39 )
-
-[node name="2605" type="Sprite" parent="Liberation/clouds"]
-position = Vector2( -4522, -192.91 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 33 )
-script = ExtResource( 41 )
-
-[node name="2606" type="Sprite" parent="Liberation/clouds"]
-position = Vector2( -3451.52, -81.8318 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 33 )
-script = ExtResource( 39 )
-
-[node name="2607" type="Sprite" parent="Liberation/clouds"]
-position = Vector2( -2146.12, -153.312 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 33 )
-script = ExtResource( 41 )
-
-[node name="2608" type="Sprite" parent="Liberation/clouds"]
-position = Vector2( -1493.99, -228.754 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 33 )
-script = ExtResource( 39 )
-
-[node name="Background" type="Panel" parent="Liberation"]
-margin_left = -5000.29
-margin_top = 3339.23
-margin_right = -1665.29
-margin_bottom = 13467.2
-rect_rotation = -89.9999
-custom_styles/panel = SubResource( 17 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="square2" type="Panel" parent="Liberation"]
-margin_left = -4511.0
-margin_top = 375.0
-margin_right = -2368.0
-margin_bottom = 2267.0
-mouse_filter = 2
-custom_styles/panel = SubResource( 28 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Street" type="Panel" parent="Liberation"]
-margin_left = -2409.0
-margin_top = 512.0
-margin_right = 4383.0
-margin_bottom = 839.0
-mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Street2" type="Panel" parent="Liberation"]
-margin_left = -1855.0
-margin_top = 1331.0
-margin_right = 2158.0
-margin_bottom = 1556.0
-mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Street3" type="Panel" parent="Liberation"]
-margin_left = -1756.2
-margin_top = 2274.8
-margin_right = 2278.8
-margin_bottom = 2481.8
-mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Street5" type="Panel" parent="Liberation"]
-margin_left = -1799.0
-margin_top = 2925.0
-margin_right = 2367.0
-margin_bottom = 3135.0
-mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Street6" type="Panel" parent="Liberation"]
-margin_left = -7.0
-margin_top = 804.0
-margin_right = 366.0
-margin_bottom = 2974.0
-mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="square" type="Panel" parent="Liberation"]
-margin_left = -325.0
-margin_top = 299.0
-margin_right = 707.0
-margin_bottom = 647.0
-mouse_filter = 2
-custom_styles/panel = SubResource( 28 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Rails" type="Panel" parent="Liberation"]
-margin_left = -4229.17
-margin_top = 437.172
-margin_right = 4391.83
-margin_bottom = 521.172
-mouse_filter = 2
-custom_styles/panel = SubResource( 24 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Rails2" type="Panel" parent="Liberation"]
-margin_left = -4229.17
-margin_top = 2975.0
-margin_right = 4391.83
-margin_bottom = 3059.0
-mouse_filter = 2
-custom_styles/panel = SubResource( 24 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel3" type="Panel" parent="Liberation"]
-margin_left = 542.752
-margin_top = 1720.45
-margin_right = 917.752
-margin_bottom = 1932.45
-mouse_filter = 2
-custom_styles/panel = SubResource( 18 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel5" type="Panel" parent="Liberation"]
-margin_left = -1052.31
-margin_top = 818.044
-margin_right = -677.309
-margin_bottom = 1030.04
-mouse_filter = 2
-custom_styles/panel = SubResource( 18 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel7" type="Panel" parent="Liberation"]
-modulate = Color( 0.537255, 1, 0.458824, 1 )
-margin_left = -4272.69
-margin_top = 797.348
-margin_right = -3616.69
-margin_bottom = 1829.35
-mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel8" type="Panel" parent="Liberation"]
-modulate = Color( 0.537255, 1, 0.458824, 1 )
-margin_left = -3316.7
-margin_top = 812.45
-margin_right = -2660.7
-margin_bottom = 1844.45
-mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel6" type="Panel" parent="Liberation"]
-modulate = Color( 0.537255, 1, 0.458824, 1 )
-margin_left = 2466.27
-margin_top = 1390.78
-margin_right = 4400.27
-margin_bottom = 2366.78
-mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="YSort" type="YSort" parent="Liberation"]
-script = ExtResource( 1 )
-
-[node name="Space" type="RichTextLabel" parent="Liberation/YSort"]
-margin_left = -4413.84
-margin_top = 8.07266
-margin_right = -4039.84
-margin_bottom = 368.073
-focus_mode = 2
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/normal_font = SubResource( 20 )
-custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
-bbcode_enabled = true
-bbcode_text = "[center][url=https://diegoferraribruno.itch.io/gato-mia-2][img]res://img/64/1f639.png[/img] Play Gato Mia! Another game by Diego Ferrari Bruno[/url][/center]"
-meta_underlined = false
-text = " Play Gato Mia! Another game by Diego Ferrari Bruno"
-selection_enabled = true
-script = ExtResource( 29 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="1f3da" type="Sprite" parent="Liberation/YSort/Space"]
-position = Vector2( 190.312, 252.778 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 22 )
-
-[node name="Area2D" type="Area2D" parent="Liberation/YSort/Space"]
-position = Vector2( -5.04541, 99.2258 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/YSort/Space/Area2D"]
-position = Vector2( 196.846, 153.541 )
-shape = SubResource( 21 )
-
-[node name="Store" type="Panel" parent="Liberation/YSort"]
-margin_left = -459.538
-margin_top = 818.958
-margin_right = -84.5358
-margin_bottom = 1030.96
-mouse_filter = 2
-custom_styles/panel = SubResource( 18 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="1f45c" type="Sprite" parent="Liberation/YSort/Store"]
-position = Vector2( 81.915, 139.107 )
-texture = ExtResource( 27 )
-
-[node name="1f45d" type="Sprite" parent="Liberation/YSort/Store"]
-position = Vector2( 174.948, 137.448 )
-texture = ExtResource( 28 )
-
-[node name="1f45b" type="Sprite" parent="Liberation/YSort/Store"]
-position = Vector2( 269.895, 138.334 )
-texture = ExtResource( 26 )
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Liberation/YSort/Store"]
-margin_right = 362.0
-margin_bottom = 104.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel8" type="Panel" parent="Liberation/YSort"]
-margin_left = -1689.42
-margin_top = 1741.81
-margin_right = -1314.42
-margin_bottom = 1953.81
-mouse_filter = 2
-custom_styles/panel = SubResource( 18 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel9" type="Panel" parent="Liberation/YSort"]
-margin_left = 1012.26
-margin_top = 795.501
-margin_right = 1387.26
-margin_bottom = 1007.5
-mouse_filter = 2
-custom_styles/panel = SubResource( 18 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel10" type="Panel" parent="Liberation/YSort"]
-margin_left = 1733.31
-margin_top = 132.298
-margin_right = 2065.31
-margin_bottom = 351.298
-mouse_filter = 2
-custom_styles/panel = SubResource( 29 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RigidBody2D" type="RigidBody2D" parent="Liberation/YSort/Panel10"]
-position = Vector2( 176.525, 97.1031 )
-mass = 0.262245
-gravity_scale = 0.0
-linear_velocity = Vector2( 6, 0 )
-linear_damp = 1.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="1f3d0" type="Sprite" parent="Liberation/YSort/Panel10/RigidBody2D"]
-texture = ExtResource( 30 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/YSort/Panel10/RigidBody2D"]
-shape = SubResource( 23 )
-
-[node name="Panel2" type="Panel" parent="Liberation/YSort"]
-margin_left = 1109.87
-margin_top = 1736.19
-margin_right = 1477.87
-margin_bottom = 1942.19
-mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel7" type="Panel" parent="Liberation/YSort"]
-margin_left = -1119.0
-margin_top = 1681.0
-margin_right = -718.0
-margin_bottom = 1979.0
-mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="1f69c" type="Sprite" parent="Liberation/YSort"]
-position = Vector2( 3419.77, 348.081 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 9 )
-offset = Vector2( 0, -32 )
-
-[node name="RigidBody2D" type="RigidBody2D" parent="Liberation/YSort"]
-position = Vector2( -4141.47, 1287.1 )
-mass = 0.262245
-gravity_scale = 0.0
-linear_velocity = Vector2( 6, 0 )
-linear_damp = 1.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="1f3d0" type="Sprite" parent="Liberation/YSort/RigidBody2D"]
-texture = ExtResource( 30 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/YSort/RigidBody2D"]
-shape = SubResource( 23 )
-
-[node name="RigidBody2D2" type="RigidBody2D" parent="Liberation/YSort"]
-position = Vector2( -2946.4, 1456.62 )
-mass = 0.262245
-gravity_scale = 0.0
-linear_velocity = Vector2( 6, 0 )
-linear_damp = 1.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="1f3d0" type="Sprite" parent="Liberation/YSort/RigidBody2D2"]
-texture = ExtResource( 30 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/YSort/RigidBody2D2"]
-shape = SubResource( 23 )
-
-[node name="train" type="KinematicBody2D" parent="Liberation/YSort"]
-position = Vector2( -696.313, 471.778 )
-scale = Vector2( 3, 3 )
-script = ExtResource( 31 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Liberation/YSort/train"]
-polygon = PoolVector2Array( -29.9908, -2.79146, -27.8909, -29.4598, -24.1112, -29.4598, -24.5312, -7.41116, 21.246, -7.41116, 21.036, -30.7197, 25.4457, -30.7197, 25.8657, -2.58147 )
-
-[node name="1f68b" type="Sprite" parent="Liberation/YSort/train"]
-position = Vector2( -0.986057, 6.58066 )
-texture = ExtResource( 20 )
-offset = Vector2( 0, -32 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Liberation/YSort/train"]
-position = Vector2( 59.7607, 0 )
-polygon = PoolVector2Array( -29.9908, -2.79146, -27.8909, -29.4598, -24.1112, -29.4598, -24.5312, -7.41116, 21.246, -7.41116, 21.036, -30.7197, 25.4457, -30.7197, 25.8657, -2.58147 )
-
-[node name="1f68b2" type="Sprite" parent="Liberation/YSort/train"]
-position = Vector2( 58.7746, 6.58066 )
-texture = ExtResource( 20 )
-offset = Vector2( 0, -32 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Liberation/YSort/train"]
-stream = ExtResource( 38 )
-volume_db = -26.0
-pitch_scale = 0.33
-autoplay = true
-max_distance = 1500.0
-attenuation = 1.46409
-
-[node name="1f3f3-1f308" type="Sprite" parent="Liberation/YSort/train"]
-position = Vector2( 73.9396, -64.7837 )
-texture = ExtResource( 24 )
-flip_h = true
-
-[node name="train2" type="KinematicBody2D" parent="Liberation/YSort"]
-position = Vector2( -2316.31, 3009 )
-scale = Vector2( 3, 3 )
-script = ExtResource( 31 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Liberation/YSort/train2"]
-polygon = PoolVector2Array( -29.9908, -2.79146, -27.8909, -29.4598, -24.1112, -29.4598, -24.5312, -7.41116, 21.246, -7.41116, 21.036, -30.7197, 25.4457, -30.7197, 25.8657, -2.58147 )
-
-[node name="1f68b3" type="Sprite" parent="Liberation/YSort/train2"]
-show_behind_parent = true
-position = Vector2( -0.986084, 6.58063 )
-z_index = 1
-texture = ExtResource( 20 )
-offset = Vector2( 0, -32 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Liberation/YSort/train2"]
-position = Vector2( 59.7607, 0 )
-polygon = PoolVector2Array( -29.9908, -2.79146, -27.8909, -29.4598, -24.1112, -29.4598, -24.5312, -7.41116, 21.246, -7.41116, 21.036, -30.7197, 25.4457, -30.7197, 25.8657, -2.58147 )
-
-[node name="1f68b2" type="Sprite" parent="Liberation/YSort/train2"]
-position = Vector2( 58.7746, 6.58066 )
-texture = ExtResource( 20 )
-offset = Vector2( 0, -32 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Liberation/YSort/train2"]
-stream = ExtResource( 38 )
-volume_db = -23.057
-pitch_scale = 0.33
-autoplay = true
-max_distance = 1500.0
-attenuation = 1.41421
-
-[node name="1f639" type="Sprite" parent="Liberation/YSort"]
-position = Vector2( -1843.33, 1051.41 )
-texture = ExtResource( 10 )
-
-[node name="1f6f4" type="Sprite" parent="Liberation/YSort"]
-position = Vector2( -181.002, 611.502 )
-texture = ExtResource( 11 )
-
-[node name="Player" parent="Liberation/YSort" instance=ExtResource( 2 )]
-position = Vector2( 176.225, 341.086 )
-
-[node name="Player2" parent="Liberation/YSort" instance=ExtResource( 2 )]
-position = Vector2( -500.072, 369.235 )
-script = null
-
-[node name="Frame" type="StaticBody2D" parent="Liberation/YSort"]
-position = Vector2( 0, 8 )
-
-[node name="Name2" type="RichTextLabel" parent="Liberation/YSort/Frame"]
-margin_left = -1053.35
-margin_top = 88.6335
-margin_right = -680.348
-margin_bottom = 152.634
-custom_fonts/normal_font = SubResource( 6 )
-bbcode_enabled = true
-bbcode_text = "[wave][rainbow]Rainbow Jam Party[/rainbow][/wave]"
-text = "Rainbow Jam Party"
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
-position = Vector2( 5.42694, -55.4405 )
-rotation = 1.5708
-shape = SubResource( 25 )
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
-position = Vector2( 0.0970688, 3429.13 )
-rotation = 1.5708
-shape = SubResource( 25 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
-position = Vector2( -4685.34, 4616.01 )
-shape = SubResource( 25 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
-position = Vector2( 4801.75, 4778.45 )
-shape = SubResource( 25 )
-
-[node name="Panel3" type="Panel" parent="Liberation/YSort/Frame"]
-margin_left = -3400.1
-margin_top = 2141.39
-margin_right = -2978.1
-margin_bottom = 2414.39
-mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="1f32e" type="Sprite" parent="Liberation/YSort/Frame/Panel3"]
-position = Vector2( -2596.47, -772.468 )
-texture = ExtResource( 42 )
-
-[node name="Trees" type="Node2D" parent="Liberation/YSort"]
-
-[node name="1f333" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -1187, 537.19 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f334" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 516.16, 258.999 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-
-[node name="1f335" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 935.504, 384.561 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f336" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -156.911, 250.81 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-flip_h = true
-
-[node name="1f342" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -1243.55, 2186.69 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f343" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -199.362, 3197.6 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-
-[node name="1f344" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 2764.04, 394.385 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f360" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 3589.49, 1130.94 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f361" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 2535.46, 1346.83 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f362" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 4179.74, 1635 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f363" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 3179.61, 1821.47 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f364" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 3179.61, 1821.47 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f365" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 2143.62, 1821.47 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f366" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 1403.64, 2319.28 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f367" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 3260.33, 2655.63 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f368" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -4334.13, 666.933 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f369" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -2632.67, 2790.18 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f374" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 2829.8, 2763.27 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f370" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -3492.5, 824.706 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f371" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -4381.73, 2050.19 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f372" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -2247.38, 825.256 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f373" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -3181.31, 2075.7 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 19 )
-offset = Vector2( 0, -32 )
-
-[node name="1f345" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 521.019, 3214.99 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-flip_h = true
-
-[node name="1f348" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -781.527, 3245.2 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-flip_h = true
-
-[node name="1f349" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -2310.6, 3226.32 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-flip_h = true
-
-[node name="1f346" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -1222.52, 3122.09 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-
-[node name="1f351" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -2273.34, 305.45 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-
-[node name="1f352" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -2855.5, 353.047 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-flip_h = true
-
-[node name="1f353" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -3296.5, 229.94 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-
-[node name="1f354" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 4243.52, 3216.63 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-
-[node name="1f355" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -3673.68, 3197.63 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-flip_h = true
-
-[node name="1f356" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 3210.84, 3255.28 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-
-[node name="1f357" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 2302.73, 238.854 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-
-[node name="1f358" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 4070.44, 353.047 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-flip_h = true
-
-[node name="1f359" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 2544.89, 3217.23 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-
-[node name="1f350" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 1054.55, 3256.21 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-
-[node name="1f347" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 1683.87, 3177.24 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-flip_h = true
-
-[node name="1f337" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 3742.31, 320.825 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-
-[node name="1f340" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -1315.82, 247.302 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-flip_h = true
-
-[node name="1f338" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -102.268, 1749.56 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-
-[node name="1f339" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( 849.437, 1699.9 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-flip_h = true
-
-[node name="1f341" type="Sprite" parent="Liberation/YSort/Trees"]
-position = Vector2( -416.648, 237.739 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 18 )
-offset = Vector2( 0, -32 )
-
-[node name="Radio" type="Node2D" parent="Liberation/YSort/Trees"]
-position = Vector2( -3180.78, 449.133 )
-
-[node name="Radio" type="Sprite" parent="Liberation/YSort/Trees/Radio"]
-texture = ExtResource( 12 )
-offset = Vector2( 2304.85, -221.357 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Liberation/YSort/Trees/Radio"]
-position = Vector2( 2308.9, -199.358 )
-stream = ExtResource( 51 )
-volume_db = -16.0
-autoplay = true
-max_distance = 1700.0
-
-[node name="Credits" type="RichTextLabel" parent="Liberation/YSort/Trees/Radio"]
-margin_left = 2091.53
-margin_top = -158.544
-margin_right = 2467.53
-margin_bottom = -67.5442
-custom_fonts/normal_font = SubResource( 30 )
-custom_colors/default_color = Color( 0.764706, 0.231373, 0.231373, 1 )
-bbcode_enabled = true
-bbcode_text = "[url=https://ferretentertainment.bandcamp.com/album/trans-game-jam-july-2021]Music:  Hoover Horror 
-by Harriet Ford Music[/url]"
-text = "Music:  Hoover Horror 
-by Harriet Ford Music"
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Radio2" type="Node2D" parent="Liberation/YSort/Trees"]
-position = Vector2( -6016.05, 451.214 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Radio" type="Sprite" parent="Liberation/YSort/Trees/Radio2"]
-texture = ExtResource( 12 )
-offset = Vector2( 2304.85, -221.357 )
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Liberation/YSort/Trees/Radio2"]
-position = Vector2( 2308.9, -199.358 )
-stream = ExtResource( 36 )
-volume_db = -16.0
-autoplay = true
-max_distance = 1700.0
-
-[node name="Credits" type="RichTextLabel" parent="Liberation/YSort/Trees/Radio2"]
-margin_left = 2065.68
-margin_top = -177.378
-margin_right = 2775.68
-margin_bottom = -128.378
-custom_fonts/normal_font = SubResource( 30 )
-custom_colors/default_color = Color( 0.764706, 0.231373, 0.231373, 1 )
-bbcode_enabled = true
-bbcode_text = "Music:  The manor by Hollis Aster"
-text = "Music:  The manor by Hollis Aster"
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="1f6a2" type="Sprite" parent="Liberation/YSort"]
-position = Vector2( 470.331, -12.5169 )
-texture = ExtResource( 25 )
-
-[node name="1f3aa" type="Sprite" parent="Liberation/YSort"]
-position = Vector2( 1359.18, 134.436 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-
-[node name="2615" type="Sprite" parent="Liberation/YSort"]
-position = Vector2( -850.923, 937.46 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 21 )
-
-[node name="Name3" type="RichTextLabel" parent="Liberation/YSort"]
-margin_left = 9.61081
-margin_top = 141.748
-margin_right = 477.611
-margin_bottom = 235.748
-custom_fonts/normal_font = SubResource( 27 )
-bbcode_enabled = true
-bbcode_text = "[wave][color=red]Sunrise beach[/color][/wave]"
-text = "Sunrise beach"
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Name4" type="RichTextLabel" parent="Liberation/YSort"]
-margin_left = 28.1025
-margin_top = 3068.58
-margin_right = 496.103
-margin_bottom = 3162.58
-custom_fonts/normal_font = SubResource( 27 )
-custom_colors/default_color = Color( 0.803922, 0, 0.894118, 1 )
-bbcode_enabled = true
-bbcode_text = "[wave]Sunset beach[/wave]"
-text = "Sunset beach"
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Liberation/YSort"]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Liberation/YSort"]
-margin_left = 448.971
-margin_top = 797.828
-margin_right = 822.971
-margin_bottom = 1061.83
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/normal_font = SubResource( 20 )
-custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
-bbcode_enabled = true
-bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
-Internet experience not Rated![/center]"
-text = " 
-Internet experience not Rated!"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel5" type="RichTextLabel" parent="Liberation/YSort"]
-margin_left = 4287.79
-margin_top = 2633.09
-margin_right = 4661.79
-margin_bottom = 2897.09
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/normal_font = SubResource( 20 )
-custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
-bbcode_enabled = true
-bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
-Internet experience not Rated![/center]"
-text = " 
-Internet experience not Rated!"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel6" type="RichTextLabel" parent="Liberation/YSort"]
-margin_left = -4496.04
-margin_top = 2650.33
-margin_right = -4122.04
-margin_bottom = 2914.33
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/normal_font = SubResource( 20 )
-custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
-bbcode_enabled = true
-bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
-Internet experience not Rated![/center]"
-text = " 
-Internet experience not Rated!"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel4" type="RichTextLabel" parent="Liberation/YSort"]
-margin_left = -1747.01
-margin_top = 94.7451
-margin_right = -1495.01
-margin_bottom = 395.745
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/normal_font = SubResource( 20 )
-custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
-bbcode_enabled = true
-bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
-Internet experience not Rated![/center]"
-text = " 
-Internet experience not Rated!"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="Liberation/YSort"]
-margin_left = 1566.43
-margin_top = 935.973
-margin_right = 1939.43
-margin_bottom = 1141.97
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/normal_font = SubResource( 20 )
-custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
-bbcode_enabled = true
-bbcode_text = "[center]Coffe Place
-[img]res://img/64/2615.png[/img]
-[/center]"
-text = "Coffe Place
-
-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="Liberation/YSort"]
-margin_left = 4408.34
-margin_top = 141.163
-margin_right = 4771.34
-margin_bottom = 724.164
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 26 )
-custom_fonts/normal_font = SubResource( 20 )
-custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
-bbcode_enabled = true
-bbcode_text = "[center]Jobs Agency!
-[img]res://img/64/1f5a6.png[/img]
-[url=colector][img]res://img/32/267b.png[/img] Garbage colector[/url][/center]
-"
-text = "Jobs Agency!
-
- Garbage colector
-"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="1f3e9" type="Sprite" parent="Liberation/YSort"]
-position = Vector2( -291.123, 1154.99 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 23 )
-
-[node name="placeholders" type="Node" parent="Liberation"]
-
-[node name="1f3a5" type="Sprite" parent="Liberation/placeholders"]
-position = Vector2( -418.626, 1687.89 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 48 )
-
-[node name="1f3a8" type="Sprite" parent="Liberation/placeholders"]
-position = Vector2( 1322.01, 1009.79 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 43 )
-
-[node name="1f3ac" type="Sprite" parent="Liberation/placeholders"]
-position = Vector2( -441.699, 1837.72 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 45 )
-
-[node name="1f3ad" type="Sprite" parent="Liberation/placeholders"]
-position = Vector2( 817.573, 2466.64 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 47 )
-
-[node name="1f3ae" type="Sprite" parent="Liberation/placeholders"]
-position = Vector2( 1133.37, 1019.89 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 50 )
-
-[node name="1f3b0" type="Sprite" parent="Liberation/placeholders"]
-position = Vector2( -1519.5, 1607.57 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 46 )
-
-[node name="1f3b2" type="Sprite" parent="Liberation/placeholders"]
-position = Vector2( -916.14, 1981.41 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 44 )
-
-[node name="1f3b3" type="Sprite" parent="Liberation/placeholders"]
-position = Vector2( -853.516, 1627.99 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 49 )
-
-[node name="1f323" type="Sprite" parent="."]
-modulate = Color( 100, 1.2, 0.98, 1 )
-position = Vector2( -561.646, -499.826 )
-scale = Vector2( 6, 6 )
-texture = ExtResource( 34 )
-
+[connection signal="meta_clicked" from="Liberation/YSort/Space" to="Liberation/YSort/Space" method="_on_Space_meta_clicked"]
+[connection signal="body_entered" from="Liberation/YSort/Space/Area2D" to="Liberation/YSort/Space" method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="OS/Panel/Clock/Timer" to="OS/Panel/Clock" method="_on_Timer_timeout"]
 [connection signal="meta_clicked" from="OS/Panel/ShortCuts" to="OS" method="_on_ShortCuts_meta_clicked"]
 [connection signal="released" from="OS/TouchScreenButton2" to="OS/Panel" method="_on_TouchScreenButton_released"]
 [connection signal="released" from="OS/Drag/TouchScreenButton" to="OS/Panel" method="_on_TouchScreenButton_released"]
-[connection signal="meta_clicked" from="Liberation/YSort/Space" to="Liberation/YSort/Space" method="_on_Space_meta_clicked"]
-[connection signal="body_entered" from="Liberation/YSort/Space/Area2D" to="Liberation/YSort/Space" method="_on_Area2D_body_entered"]

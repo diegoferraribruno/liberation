@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://img/64/2614.png" type="Texture" id=1]
 [ext_resource path="res://games/liberation/Player.gd" type="Script" id=2]
 [ext_resource path="res://img/64/1f5e8.png" type="Texture" id=3]
 [ext_resource path="res://img/64/2691.png" type="Texture" id=4]
+[ext_resource path="res://games/liberation/Scenes/camera.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://fonts/ComicNeue_Bold.otf"
@@ -27,7 +28,6 @@ height = 22.1606
 radius = 32.0
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 730.711, 241.252 )
 input_pickable = true
 collision/safe_margin = 10.601
 script = ExtResource( 2 )
@@ -136,6 +136,10 @@ position = Vector2( 0, -53.4539 )
 
 [node name="HeadShape" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 4 )
+
+[node name="Camera2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( -0.0263367, 0.632751 )
+zoom = Vector2( 1.5, 1.5 )
 
 [connection signal="gui_input" from="Visual/Head/RichTextLabel3" to="." method="_on_RichTextLabel3_gui_input"]
 [connection signal="meta_clicked" from="Visual/Head/RichTextLabel3" to="." method="_on_RichTextLabel3_meta_clicked"]

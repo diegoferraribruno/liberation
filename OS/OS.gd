@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-
-
 func _on_ShortCuts_meta_clicked(meta):
 	match meta:
 		"screenshot":
@@ -16,9 +14,6 @@ func screen_shot(selfie):
 #	if user.user["name"] != "Player":
 		if selfie == false:
 			$Panel.visible = false
-#			if get_parent().has_node("Dock"):
-#			get_node("../Dock").visible = false
-			
 		yield(get_tree(), "idle_frame")
 		yield(get_tree(), "idle_frame")
 		var image = get_viewport().get_texture().get_data()
