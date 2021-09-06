@@ -53,32 +53,32 @@
 [ext_resource path="res://img/64/1f3e3.png" type="Texture" id=53]
 [ext_resource path="res://img/64/1f4a9.png" type="Texture" id=54]
 
-[sub_resource type="Gradient" id=11]
+[sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0.123711, 1 )
 colors = PoolColorArray( 0.527344, 0.84214, 1, 1, 0, 0.5613, 0.842773, 1 )
 
-[sub_resource type="GradientTexture" id=12]
-gradient = SubResource( 11 )
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=13]
-texture = SubResource( 12 )
+[sub_resource type="StyleBoxTexture" id=3]
+texture = SubResource( 2 )
 region_rect = Rect2( 0, 0, 2048, 1 )
 
-[sub_resource type="StyleBoxFlat" id=14]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 128.498, 60.7412, 0.870588, 1 )
 corner_radius_top_left = 128
 corner_radius_top_right = 128
 corner_radius_bottom_right = 128
 corner_radius_bottom_left = 128
 
-[sub_resource type="GradientTexture" id=16]
+[sub_resource type="GradientTexture" id=5]
 gradient = ExtResource( 35 )
 
-[sub_resource type="StyleBoxTexture" id=17]
-texture = SubResource( 16 )
+[sub_resource type="StyleBoxTexture" id=6]
+texture = SubResource( 5 )
 region_rect = Rect2( 0, 0, 2048, 1 )
 
-[sub_resource type="StyleBoxFlat" id=22]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.941176, 0.690196, 0.768627, 1 )
 border_width_left = 64
 border_width_top = 64
@@ -90,7 +90,7 @@ corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
-[sub_resource type="StyleBoxFlat" id=28]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.694118, 0.843137, 0.227451, 1 )
 border_width_left = 64
 border_width_top = 64
@@ -102,11 +102,11 @@ corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
 
-[sub_resource type="StyleBoxFlat" id=31]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.941176, 0.690196, 0.768627, 1 )
 border_color = Color( 0.941176, 0.690196, 0.768627, 1 )
 
-[sub_resource type="StyleBoxFlat" id=24]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.580392, 0.596078, 0.607843, 1 )
 border_width_left = 32
 border_width_top = 32
@@ -118,7 +118,7 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxFlat" id=18]
+[sub_resource type="StyleBoxFlat" id=11]
 content_margin_left = 24.0
 content_margin_right = 24.0
 content_margin_top = 24.0
@@ -134,20 +134,20 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="DynamicFontData" id=19]
+[sub_resource type="DynamicFontData" id=12]
 font_path = "res://fonts/ComicNeue_Bold.otf"
 
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="DynamicFont" id=13]
 size = 29
 outline_size = 3
 outline_color = Color( 1, 1, 1, 0.768627 )
 use_filter = true
-font_data = SubResource( 19 )
+font_data = SubResource( 12 )
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 65.8403, 55.6729 )
 
-[sub_resource type="StyleBoxFlat" id=29]
+[sub_resource type="StyleBoxFlat" id=15]
 content_margin_left = 24.0
 content_margin_right = 24.0
 content_margin_top = 24.0
@@ -160,37 +160,37 @@ border_width_right = 6
 border_width_bottom = 6
 border_color = Color( 0.901961, 0.772549, 0.0745098, 1 )
 
-[sub_resource type="CircleShape2D" id=23]
+[sub_resource type="CircleShape2D" id=16]
 radius = 32.0
 
-[sub_resource type="DynamicFontData" id=3]
+[sub_resource type="DynamicFontData" id=17]
 font_path = "res://fonts/OpenSans-Bold.ttf"
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=18]
 size = 37
 outline_size = 3
 outline_color = Color( 1, 1, 1, 0.768627 )
 use_filter = true
-font_data = SubResource( 3 )
+font_data = SubResource( 17 )
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 111.793, 4897.02 )
 
-[sub_resource type="DynamicFont" id=30]
+[sub_resource type="DynamicFont" id=20]
 size = 32
 outline_size = 2
 outline_color = Color( 1, 1, 1, 0.768627 )
 use_filter = true
-font_data = SubResource( 3 )
+font_data = SubResource( 17 )
 
-[sub_resource type="DynamicFont" id=27]
+[sub_resource type="DynamicFont" id=21]
 size = 50
 outline_size = 5
 outline_color = Color( 1, 1, 1, 0.768627 )
 use_filter = true
-font_data = SubResource( 3 )
+font_data = SubResource( 17 )
 
-[sub_resource type="StyleBoxFlat" id=26]
+[sub_resource type="StyleBoxFlat" id=22]
 content_margin_left = 24.0
 content_margin_right = 24.0
 content_margin_top = 24.0
@@ -206,40 +206,40 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxEmpty" id=23]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=24]
 bg_color = Color( 0.298039, 0.0509804, 0.321569, 0.705882 )
 border_width_bottom = 12
 border_color = Color( 0.968627, 0, 1, 0.737255 )
 border_blend = true
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=25]
 size = 24
 outline_size = 4
 outline_color = Color( 0.211765, 0.211765, 0.211765, 0.415686 )
 use_filter = true
 extra_spacing_char = 3
-font_data = SubResource( 3 )
+font_data = SubResource( 17 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=26]
 size = 22
 outline_size = 2
 outline_color = Color( 1, 1, 1, 0.768627 )
 use_filter = true
 extra_spacing_bottom = -4
-font_data = SubResource( 3 )
+font_data = SubResource( 17 )
 
-[sub_resource type="StyleBoxFlat" id=7]
+[sub_resource type="StyleBoxFlat" id=27]
 bg_color = Color( 0.141176, 0.141176, 0.141176, 0.701961 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 190, 8 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 46, 94 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 140, 42 )
 
 [node name="RainbowGameJam" type="Node"]
@@ -254,7 +254,7 @@ margin_top = 2434.0
 margin_right = 2412.0
 margin_bottom = 5717.0
 rect_rotation = -90.0
-custom_styles/panel = SubResource( 13 )
+custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -271,7 +271,7 @@ margin_left = -97.7787
 margin_top = 1.97205
 margin_right = 158.221
 margin_bottom = 257.972
-custom_styles/panel = SubResource( 14 )
+custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -342,7 +342,7 @@ script = ExtResource( 39 )
 
 [node name="Background" type="Panel" parent="Liberation"]
 anchor_left = -0.000208333
-anchor_top = 0.144289
+anchor_top = 0.144288
 anchor_right = 0.255792
 anchor_bottom = 0.144288
 margin_left = -4996.92
@@ -350,7 +350,7 @@ margin_top = 3341.76
 margin_right = -1661.92
 margin_bottom = 13469.8
 rect_rotation = -89.9999
-custom_styles/panel = SubResource( 17 )
+custom_styles/panel = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -361,7 +361,7 @@ margin_top = 203.0
 margin_right = 370.0
 margin_bottom = 2818.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -372,7 +372,7 @@ margin_top = 2201.57
 margin_right = 1933.0
 margin_bottom = 2642.57
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -383,7 +383,7 @@ margin_top = 2337.86
 margin_right = 1270.55
 margin_bottom = 2562.86
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -394,7 +394,7 @@ margin_top = 2171.0
 margin_right = -916.0
 margin_bottom = 2752.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -406,7 +406,7 @@ margin_right = -2523.0
 margin_bottom = 2342.0
 rect_pivot_offset = Vector2( 5840.58, 721.835 )
 mouse_filter = 2
-custom_styles/panel = SubResource( 28 )
+custom_styles/panel = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -417,7 +417,7 @@ margin_top = 512.0
 margin_right = 4383.0
 margin_bottom = 857.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -428,7 +428,7 @@ margin_top = 2764.0
 margin_right = 1197.0
 margin_bottom = 3177.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -439,7 +439,7 @@ margin_top = 1828.0
 margin_right = 2884.0
 margin_bottom = 2071.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -450,7 +450,7 @@ margin_top = 1121.0
 margin_right = 2898.0
 margin_bottom = 1404.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -461,7 +461,7 @@ margin_top = 3038.0
 margin_right = 3463.0
 margin_bottom = 3287.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -472,7 +472,7 @@ margin_top = 1121.0
 margin_right = 876.0
 margin_bottom = 2081.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -483,7 +483,7 @@ margin_top = 766.0
 margin_right = 311.0
 margin_bottom = 2912.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 31 )
+custom_styles/panel = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -494,7 +494,7 @@ margin_top = 792.0
 margin_right = -2099.0
 margin_bottom = 3039.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -505,7 +505,7 @@ margin_top = 774.0
 margin_right = 3147.0
 margin_bottom = 2982.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -516,7 +516,7 @@ margin_top = 299.0
 margin_right = 707.0
 margin_bottom = 531.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 28 )
+custom_styles/panel = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -527,7 +527,7 @@ margin_top = 1350.0
 margin_right = 604.0
 margin_bottom = 1857.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 28 )
+custom_styles/panel = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -538,7 +538,7 @@ margin_top = 437.172
 margin_right = 4391.83
 margin_bottom = 521.172
 mouse_filter = 2
-custom_styles/panel = SubResource( 24 )
+custom_styles/panel = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -549,7 +549,7 @@ margin_top = 2975.0
 margin_right = 4391.83
 margin_bottom = 3059.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 24 )
+custom_styles/panel = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -562,7 +562,7 @@ margin_right = -3526.96
 margin_bottom = 2241.47
 rect_pivot_offset = Vector2( 5628.58, 385.835 )
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -575,7 +575,7 @@ margin_right = -2843.96
 margin_bottom = 2201.93
 rect_pivot_offset = Vector2( 4882.58, 362.38 )
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -591,7 +591,7 @@ margin_top = 829.0
 margin_right = 4381.0
 margin_bottom = 2957.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -602,7 +602,7 @@ margin_top = 936.0
 margin_right = 3691.0
 margin_bottom = 1266.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -613,7 +613,7 @@ margin_top = 2349.0
 margin_right = -1162.0
 margin_bottom = 2557.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 28 )
+custom_styles/panel = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -624,7 +624,7 @@ margin_top = 2258.73
 margin_right = 1733.76
 margin_bottom = 2569.73
 mouse_filter = 2
-custom_styles/panel = SubResource( 28 )
+custom_styles/panel = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -652,9 +652,9 @@ margin_top = -112.643
 margin_right = -3576.48
 margin_bottom = 275.357
 focus_mode = 2
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/normal_font = SubResource( 20 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 13 )
 custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 bbcode_enabled = true
 bbcode_text = "[center][url=https://diegoferraribruno.itch.io/gato-mia-2] Play Gato Mia! Another game by Diego Ferrari Bruno[/url][/center]"
@@ -681,7 +681,7 @@ position = Vector2( -34.7104, 103.464 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/YSort/Space/Area2D"]
 position = Vector2( 179.894, 147.547 )
-shape = SubResource( 21 )
+shape = SubResource( 14 )
 
 [node name="Store" type="Panel" parent="Liberation/YSort"]
 margin_left = -390.506
@@ -689,7 +689,7 @@ margin_top = 860.008
 margin_right = -15.5063
 margin_bottom = 1120.01
 mouse_filter = 2
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -712,7 +712,7 @@ margin_top = 879.157
 margin_right = 1706.99
 margin_bottom = 1131.16
 mouse_filter = 2
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -723,7 +723,7 @@ margin_top = 2078.36
 margin_right = -20.053
 margin_bottom = 2330.36
 mouse_filter = 2
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -734,7 +734,7 @@ margin_top = 2085.91
 margin_right = -465.562
 margin_bottom = 2337.91
 mouse_filter = 2
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -745,7 +745,7 @@ margin_top = 2093.46
 margin_right = -1711.48
 margin_bottom = 2345.46
 mouse_filter = 2
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -756,7 +756,7 @@ margin_top = 2433.26
 margin_right = -1719.03
 margin_bottom = 2685.26
 mouse_filter = 2
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -767,7 +767,7 @@ margin_top = 2321.74
 margin_right = 4102.24
 margin_bottom = 2629.74
 mouse_filter = 2
-custom_styles/panel = SubResource( 18 )
+custom_styles/panel = SubResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -778,7 +778,7 @@ margin_top = 132.0
 margin_right = 1972.0
 margin_bottom = 351.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 29 )
+custom_styles/panel = SubResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -797,7 +797,7 @@ __meta__ = {
 texture = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/YSort/Panel10/RigidBody2D"]
-shape = SubResource( 23 )
+shape = SubResource( 16 )
 
 [node name="1f69c" type="Sprite" parent="Liberation/YSort"]
 position = Vector2( 3419.77, 348.081 )
@@ -819,7 +819,7 @@ __meta__ = {
 texture = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/YSort/RigidBody2D"]
-shape = SubResource( 23 )
+shape = SubResource( 16 )
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="Liberation/YSort"]
 position = Vector2( -3018.28, 1992.33 )
@@ -835,7 +835,7 @@ __meta__ = {
 texture = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Liberation/YSort/RigidBody2D2"]
-shape = SubResource( 23 )
+shape = SubResource( 16 )
 
 [node name="train" type="KinematicBody2D" parent="Liberation/YSort"]
 position = Vector2( -696.313, 471.778 )
@@ -925,7 +925,7 @@ margin_left = -1053.35
 margin_top = 88.6335
 margin_right = -680.348
 margin_bottom = 152.634
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 18 )
 bbcode_enabled = true
 scroll_active = false
 __meta__ = {
@@ -935,20 +935,20 @@ __meta__ = {
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
 position = Vector2( 5.42694, -55.4405 )
 rotation = 1.5708
-shape = SubResource( 25 )
+shape = SubResource( 19 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
 position = Vector2( 0.0970688, 3525.13 )
 rotation = 1.5708
-shape = SubResource( 25 )
+shape = SubResource( 19 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
 position = Vector2( -4659.95, 4654.1 )
-shape = SubResource( 25 )
+shape = SubResource( 19 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Liberation/YSort/Frame"]
 position = Vector2( 4903.34, 4473.67 )
-shape = SubResource( 25 )
+shape = SubResource( 19 )
 
 [node name="Panel3" type="Panel" parent="Liberation/YSort/Frame"]
 margin_left = -3659.31
@@ -957,7 +957,7 @@ margin_right = -3237.31
 margin_bottom = 2607.58
 rect_pivot_offset = Vector2( 5191.55, -743.342 )
 mouse_filter = 2
-custom_styles/panel = SubResource( 22 )
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1265,7 +1265,7 @@ margin_left = -227.416
 margin_top = -112.791
 margin_right = 226.584
 margin_bottom = 215.209
-custom_fonts/normal_font = SubResource( 30 )
+custom_fonts/normal_font = SubResource( 20 )
 custom_colors/default_color = Color( 0.764706, 0.231373, 0.231373, 1 )
 bbcode_enabled = true
 bbcode_text = "[center][wave][rainbow]Rainbow Jam Party[/rainbow][/wave]
@@ -1300,7 +1300,7 @@ margin_left = -276.704
 margin_top = -81.4346
 margin_right = 278.296
 margin_bottom = 101.565
-custom_fonts/normal_font = SubResource( 30 )
+custom_fonts/normal_font = SubResource( 20 )
 custom_colors/default_color = Color( 0.764706, 0.231373, 0.231373, 1 )
 bbcode_enabled = true
 bbcode_text = "[center][wave][rainbow]Rainbow Jam Party[/rainbow][/wave]
@@ -1334,7 +1334,7 @@ margin_left = 9.61081
 margin_top = 141.748
 margin_right = 477.611
 margin_bottom = 235.748
-custom_fonts/normal_font = SubResource( 27 )
+custom_fonts/normal_font = SubResource( 21 )
 bbcode_enabled = true
 bbcode_text = "[wave][color=red]Sunrise beach[/color][/wave]"
 text = "Sunrise beach"
@@ -1348,7 +1348,7 @@ margin_left = 40.8018
 margin_top = 2776.5
 margin_right = 508.802
 margin_bottom = 2870.5
-custom_fonts/normal_font = SubResource( 27 )
+custom_fonts/normal_font = SubResource( 21 )
 custom_colors/default_color = Color( 0.803922, 0, 0.894118, 1 )
 bbcode_enabled = true
 bbcode_text = "[wave]Sunset beach[/wave]"
@@ -1370,9 +1370,9 @@ margin_left = 415.065
 margin_top = 866.655
 margin_right = 789.065
 margin_bottom = 1130.66
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/normal_font = SubResource( 20 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 13 )
 custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 bbcode_enabled = true
 bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
@@ -1388,9 +1388,9 @@ margin_left = -909.014
 margin_top = 858.027
 margin_right = -535.014
 margin_bottom = 1110.03
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/normal_font = SubResource( 20 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 13 )
 custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 bbcode_enabled = true
 bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
@@ -1406,9 +1406,9 @@ margin_left = -1439.58
 margin_top = 850.027
 margin_right = -1065.58
 margin_bottom = 1102.03
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/normal_font = SubResource( 20 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 13 )
 custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 bbcode_enabled = true
 bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
@@ -1424,9 +1424,9 @@ margin_left = 888.136
 margin_top = 868.052
 margin_right = 1262.14
 margin_bottom = 1132.05
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/normal_font = SubResource( 20 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 13 )
 custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 bbcode_enabled = true
 bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
@@ -1442,9 +1442,9 @@ margin_left = 4446.31
 margin_top = 2904.71
 margin_right = 4741.31
 margin_bottom = 3168.71
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/normal_font = SubResource( 20 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 13 )
 custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 bbcode_enabled = true
 bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
@@ -1460,9 +1460,9 @@ margin_left = -4518.43
 margin_top = 2842.71
 margin_right = -4235.43
 margin_bottom = 3163.71
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/normal_font = SubResource( 20 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 13 )
 custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 bbcode_enabled = true
 bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
@@ -1478,9 +1478,9 @@ margin_left = -1924.4
 margin_top = 72.7288
 margin_right = -1672.4
 margin_bottom = 373.729
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/normal_font = SubResource( 20 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 13 )
 custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 bbcode_enabled = true
 bbcode_text = "[center][img]res://img/64/1f5a7.png[/img] 
@@ -1496,9 +1496,9 @@ margin_left = 3795.0
 margin_top = 936.0
 margin_right = 4063.0
 margin_bottom = 1164.0
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 18 )
-custom_fonts/normal_font = SubResource( 20 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/normal_font = SubResource( 13 )
 custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Coffe Place
@@ -1516,9 +1516,9 @@ margin_left = 4408.0
 margin_top = 141.0
 margin_right = 4771.0
 margin_bottom = 2820.0
-custom_styles/focus = SubResource( 18 )
-custom_styles/normal = SubResource( 26 )
-custom_fonts/normal_font = SubResource( 20 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/normal = SubResource( 22 )
+custom_fonts/normal_font = SubResource( 13 )
 custom_colors/default_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 bbcode_enabled = true
 bbcode_text = "[center]Jobs Agency!
@@ -1592,7 +1592,7 @@ margin_top = 49.0
 margin_right = 374.0
 margin_bottom = 761.0
 mouse_filter = 2
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1602,7 +1602,7 @@ margin_right = 376.0
 margin_bottom = 44.0
 rect_clip_content = true
 mouse_filter = 2
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 24 )
 script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -1613,7 +1613,7 @@ margin_left = 8.0
 margin_top = 2.0
 margin_right = 366.674
 margin_bottom = 30.0893
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 25 )
 custom_colors/default_color = Color( 1, 1, 1, 0.435294 )
 bbcode_enabled = true
 bbcode_text = "hi"
@@ -1641,7 +1641,7 @@ margin_left = 170.0
 margin_top = 2.0
 margin_right = 250.0
 margin_bottom = 42.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 26 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[img]res://img/32/2621.png[/img]"
@@ -1656,7 +1656,7 @@ margin_left = 246.0
 margin_top = 2.0
 margin_right = 392.0
 margin_bottom = 42.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 26 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[url=selfie][img]res://img/32/1f4f9.png[/img] [/url][url=screenshot] [img]res://img/32/1f4f7.png[/img] [/url][url=volume][img]res://img/32/1f569.png[/img] [/url]"
@@ -1683,7 +1683,7 @@ __meta__ = {
 [node name="Alert" type="RichTextLabel" parent="OS/Panel/messages"]
 margin_right = 351.0
 margin_bottom = 70.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 26 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 bbcode_text = "[img]res://img/32/2621.png[/img] This is an Alert! Really!
@@ -1700,7 +1700,7 @@ __meta__ = {
 margin_top = 74.0
 margin_right = 351.0
 margin_bottom = 113.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 18 )
 bbcode_text = "o laia"
 text = "o laia"
 fit_content_height = true
@@ -1713,7 +1713,7 @@ __meta__ = {
 margin_top = 117.0
 margin_right = 351.0
 margin_bottom = 156.0
-custom_fonts/normal_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 18 )
 bbcode_text = "o laia"
 text = "o laia"
 fit_content_height = true
@@ -1726,7 +1726,7 @@ __meta__ = {
 margin_top = 160.0
 margin_right = 351.0
 margin_bottom = 160.0
-custom_styles/panel = SubResource( 7 )
+custom_styles/panel = SubResource( 27 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1734,14 +1734,14 @@ __meta__ = {
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="OS"]
 visible = false
 position = Vector2( 0, 37 )
-shape = SubResource( 8 )
+shape = SubResource( 28 )
 
 [node name="Drag" type="Node2D" parent="OS"]
 position = Vector2( 0, 42 )
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="OS/Drag"]
 position = Vector2( 0, -10 )
-shape = SubResource( 8 )
+shape = SubResource( 28 )
 
 [node name="Alarm" type="AudioStreamPlayer" parent="OS"]
 stream = ExtResource( 17 )
@@ -1778,7 +1778,7 @@ texture = ExtResource( 7 )
 
 [node name="TouchLeft" type="TouchScreenButton" parent="OS/TouchControl/Left"]
 position = Vector2( 41.2333, 281.819 )
-shape = SubResource( 9 )
+shape = SubResource( 29 )
 passby_press = true
 action = "ui_left"
 visibility_mode = 1
@@ -1799,21 +1799,21 @@ texture = ExtResource( 4 )
 
 [node name="TouchRight" type="TouchScreenButton" parent="OS/TouchControl/Right"]
 position = Vector2( 204.597, 280.474 )
-shape = SubResource( 9 )
+shape = SubResource( 29 )
 passby_press = true
 action = "ui_right"
 visibility_mode = 1
 
 [node name="TouchUP" type="TouchScreenButton" parent="OS/TouchControl"]
 position = Vector2( 25.5412, 254.753 )
-shape = SubResource( 10 )
+shape = SubResource( 30 )
 passby_press = true
 action = "ui_up"
 visibility_mode = 1
 
 [node name="TouchDown" type="TouchScreenButton" parent="OS/TouchControl"]
 position = Vector2( 29, 414.224 )
-shape = SubResource( 10 )
+shape = SubResource( 30 )
 passby_press = true
 action = "ui_down"
 visibility_mode = 1

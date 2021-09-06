@@ -58,14 +58,12 @@ __meta__ = {
 }
 
 [node name="1f5e8" type="Sprite" parent="."]
-visible = false
 modulate = Color( 2.31, 1.16, 3.46, 1 )
-position = Vector2( -37.2584, -108.028 )
+position = Vector2( -38.2584, -107.028 )
 scale = Vector2( 1.4, 1.4 )
 texture = ExtResource( 3 )
 
 [node name="Name2" type="RichTextLabel" parent="."]
-visible = false
 margin_left = -72.0
 margin_top = -145.0
 margin_right = -3.0

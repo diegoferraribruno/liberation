@@ -10,10 +10,10 @@ func _physics_process(delta):
 	# Check input for "desired" velocity
 	if Input.is_action_pressed("ui_right"):
 		input_velocity.x += 1
-		$"Visual".scale.x = -1
+		$"Visual".scale.x = lerp($"Visual".scale.x,-1,0.3)
 	if Input.is_action_pressed("ui_left"):
 		input_velocity.x -= 1
-		$"Visual".scale.x = 1
+		$"Visual".scale.x = lerp($"Visual".scale.x,1,0.3)
 	if Input.is_action_pressed("ui_down"):
 		input_velocity.y += 1
 	if Input.is_action_pressed("ui_up"):
